@@ -25,7 +25,7 @@
 .about-card {
   background: var(--color-bg-card);
   border-radius: 16px;
-  margin: 0 2rem;
+  margin: 0 5rem;
   padding: 1.6rem 2.5rem;
   border: 1px solid var(--color-border);
   box-shadow: 0 18px 40px var(--shadow-soft);
@@ -86,7 +86,7 @@
 
 .about-card-fun {
   align-self: stretch;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 @media (max-width: 900px) {

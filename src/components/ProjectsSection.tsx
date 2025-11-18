@@ -55,7 +55,7 @@ const projects: Project[] = [
     learned:
       "Construction d'une application React structurée, gestion du routing, organisation des composants, design system.",
     fullDescription:
-      "Portfolio moderne entièrement codé pour présenter mes projets, mes compétences et mon identité professionnelle. Conçu avec React, TypeScript et un design responsive soigné.",
+      "Portfolio récent entièrement codé pour présenter mes projets, mes compétences et mon identité professionnelle. Conçu avec React, TypeScript et un design responsive soigné.",
   },
   {
     id: 2,
@@ -77,11 +77,11 @@ const projects: Project[] = [
     ],
     videoUrl: "/videos/tatooine.mp4",
     constraints:
-      "Projet limité à 24h, travail en équipe, fonctionnalités essentielles uniquement, découverte du react 2 semaines avant le début du challenge.",
+      "Temps limité à 24h, travail en équipe, fonctionnalités essentielles uniquement, découverte du react 2 semaines avant le début du challenge.",
     learned:
       "Collaboration Git, partage des tâches, création rapide d'interfaces réactives, gestion des priorités, appeler un API existant.",
     fullDescription:
-      "Application construite en équipe lors d'un hackathon. Objectif: créer une plateforme fun autour de l'univers Star Wars permettant de visualiser des offres, profils et informations.",
+      "Application construite en équipe lors d'un hackathon. Objectif: créer une plateforme inspiré de l'univers 'Star Wars' permettant de visualiser des offres, profils et informations.",
   },
   {
     id: 3,
@@ -103,11 +103,11 @@ const projects: Project[] = [
     ],
     videoUrl: "/videos/sharkapuce.mp4",
     constraints:
-      "Travail de groupe, harmonisation du code, coordination entre plusieurs membres.",
+      "Harmonisation du code, coordination technique entre plusieurs membres du groupe.",
     learned:
       "Gestion de branche, merge requests, organisation du travail à plusieurs, structuration d'un projet simple mais cohérent.",
     fullDescription:
-      "Projet d'équipe visant à créer une interface simple autour d'un thème de médiathèque. Exercice centré sur la collaboration et les bonnes pratiques Git.",
+      "Projet d'équipe visant à créer une interface simple pour une médiathèque. Exercice centré sur la collaboration et les bonnes pratiques Git.",
   },
   {
     id: 4,
@@ -133,7 +133,7 @@ const projects: Project[] = [
     learned:
       "Gestion de dropdowns web et mobile, manipulation du DOM, responsive design.",
     fullDescription:
-      "Exercice d'intégration moderne avec menu déroulant, animations légères et respect fidèle d'une maquette. Permet d'améliorer la maîtrise CSS et le JS vanilla.",
+      "Exercice d'intégration avec menu déroulant, animations légères à partir d'une maquette. Permet d'améliorer la maîtrise CSS et le JS vanilla.",
   },
   {
     id: 5,

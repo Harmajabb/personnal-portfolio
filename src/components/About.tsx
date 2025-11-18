@@ -13,24 +13,24 @@ const leftCards: AboutCard[] = [
   {
     id: 1,
     title: "QUI SUIS-JE",
-    text: "Actuellement en bootcamp intensif de 5 mois à la Wild Code School, j'ajoute une corde à mon arc afin de consolider mes compétences en frontend et conception d'interfaces.",
+    text: "Actuellement en immersion totale à la Wild Code School (5 mois de bootcamp), je forge mon expertise frontend et conception UI avec une priorité: créer des interfaces qui réduisent la friction cognitive et ouvrent le digital à tous. L'accessibilité n'est pas un bonus, c'est le point de départ.",
   },
   {
     id: 2,
     title: "MES APTITUDES",
-    text: "Je suis particulièrement à l'aise en frontend du développement. J'intègre également mes compétences en management de projet et en UX/UI design acquises lors de mes précédentes expériences, avec une attention particulière pour l'accessibilité numérique (A11Y).",
+    text: "Ma force: le frontend. Mon plus, y intégrer systématiquement: management de projet, design UX/UI et accessibilité (A11Y). Résultat ? Des interfaces qui performent, séduisent et incluent. Pas de compromis.",
   },
   {
     id: 3,
     title: "MON OBJECTIF",
-    text: "Je suis actuellement en recherche d'alternance en Concepteur Développeur d'Applications pour consolider mes compétences, poursuivre mes recherches sur l'influence des habitudes cognitives sur l'expérience utilisateur et évoluer vers une carrière internationale axée sur la transformation digitale.",
+    text: "Alternance recherchée: Concepteur Développeur d'Applications. Mon ambition ? Coder des expériences egornomiques, approfondir le lien habitudes cognitives-UX, et construire une carrière digitale sans frontières.",
   },
 ];
 
 const funFact: AboutCard = {
   id: 4,
   title: "FUN FACT",
-  text: "Cinéphile - Baroudeuse à mes jours perdus (surtout dans les pays Anglo-Saxons) - Touche à tout dans le montage des ordinateurs - Dessinatrice de BD de sensibilisation à la surdité - RPGiste sur les plateformes formatives - Personne sourde.",
+  text: "Paradoxes assumés: sourde mais cinéphile assidue, sédentaire devant mon code mais baroudeuse dès que le Royaume-Uni ou l'Irlande m'appellent. Entre montage PC, création de BD militantes sur la surdité et RPGiste, je transforme chaque passion en compétence.",
 };
 
 export default function About() {
