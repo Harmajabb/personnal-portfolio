@@ -1,0 +1,72 @@
+.theme-toggle {
+  padding: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent-hover);
+  outline-offset: 3px;
+}
+
+.icon-viewport {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.icon-stack {
+  display: inline-flex;
+  flex-direction: column;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  pointer-events: none;
+}
+
+:root[data-theme="light"] .icon-stack {
+  transform: translateY(0%);
+}
+
+:root[data-theme="dark"] .icon-stack {
+  transform: translateY(-50%);
+}
+
+:root[data-theme="dark"] .theme-toggle img {
+  filter: invert(1) brightness(1.5);
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    padding: 0.4rem;
+  }
+}

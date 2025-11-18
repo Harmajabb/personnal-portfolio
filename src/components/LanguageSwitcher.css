@@ -1,0 +1,40 @@
+.lang-switch {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.lang-switch button {
+  min-width: 2.6rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* état actif (langue sélectionnée) */
+.lang-switch button.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+/* hover léger */
+.lang-switch button:hover {
+  border-color: var(--color-accent);
+}
+
+/* focus A11Y */
+.lang-switch button:focus-visible {
+  outline: 2px solid var(--color-accent-hover);
+  outline-offset: 3px;
+}

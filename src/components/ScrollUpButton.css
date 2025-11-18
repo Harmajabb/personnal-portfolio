@@ -1,0 +1,79 @@
+.scroll-up {
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-left, 0px));
+  bottom: calc(95px + env(safe-area-inset-bottom, 0px));
+  z-index: 1000;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: hsl(0 0% 100% / 0.12);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 20px var(--shadow-soft);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    background-color 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+:root[data-theme="dark"] .scroll-up {
+  background: hsl(0 0% 100% / 0.08);
+  border-color: var(--color-border);
+}
+
+.scroll-up:hover {
+  background: var(--color-accent);
+  box-shadow: 0 12px 26px var(--shadow-soft);
+  transform: translateY(-3px);
+}
+
+.scroll-up:hover svg {
+  transform: translateY(-2px);
+}
+
+.scroll-up:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px var(--shadow-soft);
+}
+
+.scroll-up:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 0.4rem;
+}
+
+.scroll-up-icon {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+}
+
+:root[data-theme="dark"] .scroll-up-icon {
+  filter: invert(1) brightness(1.6);
+}
+
+.scroll-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-up.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+@media (max-width: 480px) {
+  .scroll-up {
+    padding: 0.8rem;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    right: calc(12px + env(safe-area-inset-left, 0px));
+  }
+}
