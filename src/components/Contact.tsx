@@ -1,10 +1,10 @@
 import "./Contact.css";
 import { useTranslation } from "react-i18next";
-import cv from "../assets/Lea_Francois_Concepteur_Developpeur_Dapplication_Alternance.pdf"
 import femIcon from "../assets/ImageFooter/frontend.png";
 import githubIcon from "../assets/ImageFooter/github.png";
 import gmailIcon from "../assets/ImageFooter/gmail.png";
 import linkedinIcon from "../assets/ImageFooter/linkedin.png";
+import cv from "../assets/Lea_Francois_Concepteur_Developpeur_Dapplication_Alternance.pdf";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -59,11 +59,7 @@ export default function Contact() {
         ))}
       </div>
 
-      <a
-        href={cv}
-        className="contact-cv-button"
-        download
-      >
+      <a href={cv} className="contact-cv-button" download>
         {t("cv_button")}
       </a>
     </section>

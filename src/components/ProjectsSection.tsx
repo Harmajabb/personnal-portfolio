@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import ProjectCard, { type ProjectActionIcon } from "./ProjectCard";
 import "./ProjectsSection.css";
 
@@ -12,10 +12,10 @@ import project4 from "../assets/ImageProjects/projet4.png";
 import project5 from "../assets/ImageProjects/projet5.png";
 import project6 from "../assets/ImageProjects/projet6.png";
 import iconWorld from "../assets/ImageProjects/world.png";
-import infoDropDownVideo from "../assets/videos/info_dropdown.mp4";
 import GarbageCityVideo from "../assets/videos/garbage_city.mp4";
+import infoDropDownVideo from "../assets/videos/info_dropdown.mp4";
 import PortfolioV1Video from "../assets/videos/Portfolio_v1.mp4";
-import PortfolioV2Video from "../assets/videos/Portfolio_v2.mp4";
+import PortfolioV2Video from "../assets/videos/portfolio_v2.mp4";
 import sharkapuceVideo from "../assets/videos/sharkapuce_media.mp4";
 import tatooineVideo from "../assets/videos/tatooine_interim.mp4";
 
