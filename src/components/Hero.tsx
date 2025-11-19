@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 import "./Hero.css";
 import heroImage from "../assets/ImageHero/img-hero.jpg";
@@ -5,6 +6,7 @@ import heroImage from "../assets/ImageHero/img-hero.jpg";
 export default function Hero() {
   const textReveal = useRevealOnScroll<HTMLDivElement>();
   const imageReveal = useRevealOnScroll<HTMLDivElement>();
+  const { t } = useTranslation();
   return (
     <section className="hero" id="home">
       <div className="hero-layout">
@@ -14,32 +16,22 @@ export default function Hero() {
             textReveal.isVisible ? "reveal--visible" : ""
           }`}
         >
-          <p className="hero-eyebrow">Front-end · UI / UX · Accessibilité</p>
+          <p className="hero-eyebrow">{t("hero_tagline")}</p>
 
-          <h1 className="hero-title">
-            <span>Je conçois</span>
-            <span>des interfaces claires</span>
-            <span>et accessibles.</span>
-          </h1>
+          <h1 className="hero-title">{t("hero_heading")}</h1>
 
-          <p className="hero-tagline">
-            Développeuse front-end & UI/UX designer, je crée des expériences web
-            accessibles (A11Y), performantes et pensées pour les utilisateurs.
-          </p>
+          <p className="hero-tagline">{t("hero_subtitle")}</p>
 
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">
-              Voir mes projets
+              {t("hero_cta_projects")}
             </a>
             <a href="#contact" className="btn btn-ghost">
-              Me contacter
+              {t("hero_cta_contact")}
             </a>
           </div>
 
-          <p className="hero-meta">
-            Disponible pour une alternance en conception & développement
-            d&apos;applications à partir de mars 2026.
-          </p>
+          <p className="hero-meta">{t("hero_availability")}</p>
         </div>
 
         <div

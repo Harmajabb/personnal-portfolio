@@ -5,32 +5,32 @@ import portrait from "../assets/ImageAbout/portrait.png";
 
 type AboutCard = {
   id: number;
-  title: string;
-  text: string;
+  titleKey: string;
+  textKey: string;
 };
 
 const leftCards: AboutCard[] = [
   {
     id: 1,
-    title: "QUI SUIS-JE",
-    text: "Actuellement en immersion totale à la Wild Code School (5 mois de bootcamp), je forge mon expertise frontend et conception UI avec une priorité: créer des interfaces qui réduisent la friction cognitive et ouvrent le digital à tous. L'accessibilité n'est pas un bonus, c'est le point de départ.",
+    titleKey: "about_block_who_title",
+    textKey: "about_block_who_text",
   },
   {
     id: 2,
-    title: "MES APTITUDES",
-    text: "Ma force: le frontend. Mon plus, y intégrer systématiquement: management de projet, design UX/UI et accessibilité (A11Y). Résultat ? Des interfaces qui performent, séduisent et incluent. Pas de compromis.",
+    titleKey: "about_block_strengths_title",
+    textKey: "about_block_strengths_text",
   },
   {
     id: 3,
-    title: "MON OBJECTIF",
-    text: "Alternance recherchée: Concepteur Développeur d'Applications. Mon ambition ? Coder des expériences egornomiques, approfondir le lien habitudes cognitives-UX, et construire une carrière digitale sans frontières.",
+    titleKey: "about_block_goal_title",
+    textKey: "about_block_goal_text",
   },
 ];
 
 const funFact: AboutCard = {
   id: 4,
-  title: "FUN FACT",
-  text: "Paradoxes assumés: sourde mais cinéphile assidue, sédentaire devant mon code mais baroudeuse dès que le Royaume-Uni ou l'Irlande m'appellent. Entre montage PC, création de BD militantes sur la surdité et RPGiste, je transforme chaque passion en compétence.",
+  titleKey: "about_block_funfact_title",
+  textKey: "about_block_funfact_text",
 };
 
 export default function About() {
@@ -50,8 +50,8 @@ export default function About() {
         >
           {leftCards.map((card) => (
             <article key={card.id} className="about-card">
-              <h3 className="about-card-title">{card.title}</h3>
-              <p className="about-card-text">{card.text}</p>
+              <h3 className="about-card-title">{t(card.titleKey)}</h3>
+              <p className="about-card-text">{t(card.textKey)}</p>
             </article>
           ))}
         </div>
@@ -66,15 +66,15 @@ export default function About() {
             <div className="about-photo-border">
               <img
                 src={portrait}
-                alt="Portrait de Léa Jeane François"
+                alt={t("about_portrait_alt")}
                 className="about-photo"
               />
             </div>
           </div>
 
           <article className="about-card about-card-fun">
-            <h3 className="about-card-title">{funFact.title}</h3>
-            <p className="about-card-text">{funFact.text}</p>
+            <h3 className="about-card-title">{t(funFact.titleKey)}</h3>
+            <p className="about-card-text">{t(funFact.textKey)}</p>
           </article>
         </div>
       </div>

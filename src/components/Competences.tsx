@@ -45,6 +45,7 @@ import wordpress from "../assets/ImageCompetences/wordpress.svg";
 import xd from "../assets/ImageCompetences/xd.svg";
 import yoast from "../assets/ImageCompetences/yoast.svg";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+import { useTranslation } from "react-i18next";
 import "./Competences.css";
 
 type Skill = {
@@ -62,104 +63,105 @@ type SkillCategory = {
 const categories: SkillCategory[] = [
   {
     id: "project",
-    title: "GESTION DE PROJET & OUTILS COLLABORATIFS",
+    title: "skills_group_pm",
     size: "wide",
     skills: [
-      { name: "Genially", icon: genially },
-      { name: "Canva", icon: canva },
-      { name: "Miro", icon: miro },
-      { name: "Jira", icon: jira },
-      { name: "Trello", icon: trello },
-      { name: "GitHub", icon: github },
-      { name: "Microsoft Office", icon: microsoft },
-      { name: "Agile / Scrum / Kanban", icon: scrum },
-      { name: "Communication & pédagogie", icon: communication },
+      { name: "skills_pm_genially", icon: genially },
+      { name: "skills_pm_canva", icon: canva },
+      { name: "skills_pm_miro", icon: miro },
+      { name: "skills_pm_jira", icon: jira },
+      { name: "skills_pm_trello", icon: trello },
+      { name: "skills_pm_github", icon: github },
+      { name: "skills_pm_microsoft", icon: microsoft },
+      { name: "skills_pm_agile", icon: scrum },
+      { name: "skills_pm_communication", icon: communication },
     ],
   },
   {
     id: "frontend",
-    title: "DÉVELOPPEMENT FRONTEND",
+    title: "skills_group_frontend",
     size: "tall",
     skills: [
-      { name: "HTML5", icon: html },
-      { name: "CSS3 / SASS", icon: css },
-      { name: "JavaScript", icon: js },
-      { name: "TypeScript", icon: ts },
-      { name: "React", icon: react },
-      { name: "Responsive Design", icon: responsive },
-      { name: "Accessibilité (A11Y)", icon: a11y },
-      { name: "SEO Technique", icon: seo },
-      { name: "APIs REST / Fetch", icon: api },
-      { name: "Git", icon: git },
-      { name: "VS Code", icon: vscode },
-      { name: "Sublime Text", icon: sublimeText },
+      { name: "skills_frontend_html", icon: html },
+      { name: "skills_frontend_css", icon: css },
+      { name: "skills_frontend_js", icon: js },
+      { name: "skills_frontend_ts", icon: ts },
+      { name: "skills_frontend_react", icon: react },
+      { name: "skills_frontend_responsive", icon: responsive },
+      { name: "skills_frontend_a11y", icon: a11y },
+      { name: "skills_frontend_seo", icon: seo },
+      { name: "skills_frontend_api", icon: api },
+      { name: "skills_frontend_git", icon: git },
+      { name: "skills_frontend_vscode", icon: vscode },
+      { name: "skills_frontend_sublime", icon: sublimeText },
     ],
   },
   {
     id: "backend-system",
-    title: "DÉVELOPPEMENT BACKEND & SYSTÈMES",
+    title: "skills_group_backend",
     size: "square",
     skills: [
-      { name: "Node.js", icon: node },
-      { name: "Windows", icon: windows },
-      { name: "Apple", icon: apple },
-      { name: "Linux", icon: linux },
-      { name: "Git Bash", icon: gitbash },
+      { name: "skills_backend_node", icon: node },
+      { name: "skills_backend_windows", icon: windows },
+      { name: "skills_backend_macos", icon: apple },
+      { name: "skills_backend_linux", icon: linux },
+      { name: "skills_backend_gitbash", icon: gitbash },
     ],
   },
   {
     id: "uxui",
-    title: "DESIGN UX / UI",
+    title: "skills_group_uxui",
     size: "wide",
     skills: [
-      { name: "UX/UI Design", icon: uxui },
-      { name: "Wireframing", icon: wireframe },
-      { name: "Prototypage", icon: prototype },
-      { name: "Figma", icon: figma },
-      { name: "Adobe XD", icon: xd },
-      { name: "Miro", icon: miro },
+      { name: "skills_uxui_design", icon: uxui },
+      { name: "skills_uxui_wireframing", icon: wireframe },
+      { name: "skills_uxui_prototyping", icon: prototype },
+      { name: "skills_uxui_figma", icon: figma },
+      { name: "skills_uxui_xd", icon: xd },
+      { name: "skills_uxui_miro", icon: miro },
     ],
   },
   {
     id: "graphisme",
-    title: "GRAPHISME & CRÉATION VISUELLE",
+    title: "skills_group_visual",
     size: "square",
     skills: [
-      { name: "Illustrator", icon: illustrator },
-      { name: "Photoshop", icon: ps },
-      { name: "InDesign", icon: idesign },
-      { name: "After Effects", icon: ae },
+      { name: "skills_visual_illustrator", icon: illustrator },
+      { name: "skills_visual_photoshop", icon: ps },
+      { name: "skills_visual_indesign", icon: idesign },
+      { name: "skills_visual_aftereffects", icon: ae },
     ],
   },
   {
     id: "nocode",
-    title: "NO CODE & CMS",
+    title: "skills_group_nocode",
     size: "square",
     skills: [
-      { name: "PandaSuite", icon: panda },
-      { name: "Divi", icon: divi },
-      { name: "Elementor", icon: elementor },
-      { name: "WordPress", icon: wordpress },
-      { name: "Yoast SEO", icon: yoast },
+      { name: "skills_nocode_pandasuite", icon: panda },
+      { name: "skills_nocode_divi", icon: divi },
+      { name: "skills_nocode_elementor", icon: elementor },
+      { name: "skills_nocode_wordpress", icon: wordpress },
+      { name: "skills_nocode_yoast", icon: yoast },
     ],
   },
   {
     id: "softskills",
-    title: "SOFT SKILLS",
+    title: "skills_group_softskills",
     size: "wide",
     skills: [
-      { name: "Pédagogie", icon: pedagogie },
-      { name: "Curiosité", icon: curiosity },
-      { name: "Vulgarisation technique", icon: vulgarisation },
-      { name: "Travail en équipe", icon: diversity },
-      { name: "Sens de l'accessibilité", icon: a11y },
-      { name: "Adaptabilité", icon: adaptative },
+      { name: "skills_soft_pedagogie", icon: pedagogie },
+      { name: "skills_soft_curiosity", icon: curiosity },
+      { name: "skills_soft_vulgarisation", icon: vulgarisation },
+      { name: "skills_soft_teamwork", icon: diversity },
+      { name: "skills_soft_accessibility", icon: a11y },
+      { name: "skills_soft_adaptability", icon: adaptative },
     ],
   },
 ];
 
 export default function Competences() {
   const skillsReveal = useRevealOnScroll<HTMLDivElement>();
+  const { t } = useTranslation();
 
   return (
     <section
@@ -169,7 +171,7 @@ export default function Competences() {
         skillsReveal.isVisible ? "reveal--visible" : ""
       }`}
     >
-      <h2 className="skills-title">MES COMPÉTENCES</h2>
+      <h2 className="skills-title">{t("skills_title")}</h2>
 
       <div className="skills-bento">
         {categories.map((category) => (
@@ -179,7 +181,7 @@ export default function Competences() {
               category.size ? `bento-item--${category.size}` : ""
             }`}
           >
-            <h3 className="bento-title">{category.title}</h3>
+            <h3 className="bento-title">{t(category.title)}</h3>
 
             <div className="bento-skills-grid">
               {category.skills.map((skill) => (
@@ -191,7 +193,7 @@ export default function Competences() {
                       className="bento-skill-icon"
                     />
                   )}
-                  <span className="bento-skill-name">{skill.name}</span>
+                  <span className="bento-skill-name">{t(skill.name)}</span>
                 </div>
               ))}
             </div>

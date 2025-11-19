@@ -1,11 +1,13 @@
 import "./Contact.css";
-
+import { useTranslation } from "react-i18next";
+import cv from "../assets/Lea_Francois_Concepteur_Developpeur_Dapplication_Alternance.pdf"
 import femIcon from "../assets/ImageFooter/frontend.png";
 import githubIcon from "../assets/ImageFooter/github.png";
 import gmailIcon from "../assets/ImageFooter/gmail.png";
 import linkedinIcon from "../assets/ImageFooter/linkedin.png";
 
 export default function Contact() {
+  const { t } = useTranslation();
   const contacts = [
     {
       id: 1,
@@ -39,7 +41,7 @@ export default function Contact() {
 
   return (
     <section className="contact-section" id="contact">
-      <h2 className="contact-title">ME RETROUVER</h2>
+      <h2 className="contact-title">{t("contact_findme")}</h2>
 
       <div className="contact-grid">
         {contacts.map((item) => (
@@ -58,11 +60,11 @@ export default function Contact() {
       </div>
 
       <a
-        href="/cv-lea-jeane-francois.pdf"
+        href={cv}
         className="contact-cv-button"
         download
       >
-        Télécharger mon CV
+        {t("cv_button")}
       </a>
     </section>
   );

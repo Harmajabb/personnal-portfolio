@@ -31,6 +31,7 @@
   opacity: 0.85;
   text-align: center;
   flex: 1;
+  display: none;
 }
 
 @media (max-width: 700px) {
