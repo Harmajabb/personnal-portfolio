@@ -52,7 +52,7 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={item.icon} alt={item.label} className="contact-icon" />
+            <img src={item.icon} alt="" className="contact-icon" />
             <p className="contact-label">{item.label}</p>
             <p className="contact-handle">{item.handle}</p>
           </a>
