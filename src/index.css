@@ -177,6 +177,7 @@ button.btn-primary:focus-visible {
 
 .btn-ghost:hover {
   background-color: var(--color-bg-card);
+  color: var(--color-text);
 }
 
 .btn:disabled,

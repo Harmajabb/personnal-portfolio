@@ -67,12 +67,12 @@
     border-color 0.2s ease;
 }
 
-.bento-skill-card:hover {
-  transform: translateY(-3px);
+/* .bento-skill-card:hover { */
+  /* transform: translateY(-3px);
   box-shadow: 0 14px 30px var(--shadow-soft);
   background-color: var(--color-bg-card);
-  border-color: var(--color-accent);
-}
+  border-color: var(--color-accent);*/
+/* } */
 
 .bento-skill-icon {
   width: 30px;

@@ -79,6 +79,23 @@
   filter: brightness(0.9);
 }
 
+@media (min-width: 1200px) {
+  .hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-inline: 2rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 550px;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-layout {
     grid-template-columns: 1fr;

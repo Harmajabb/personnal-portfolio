@@ -96,7 +96,7 @@ const projects: Project[] = [
       {
         icon: iconMusic,
         label: "project_icon_figma",
-        url: "https://github.com/Joachim-masson/mediaSharkapuces",
+        url: "https://www.figma.com/design/vVdw8sLIFfYATBgTg5JBRx/Sharkpuce-team-library?t=j6Uo1UKu4O0e6op9-1",
       },
     ],
     videoUrl: sharkapuceVideo,
