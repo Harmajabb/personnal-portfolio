@@ -1,0 +1,225 @@
+/* ======================================================
+   Author: Lea Francois
+   For: Personnal use - Social links profile 
+   Description: Stylesheet for Social links profile
+   ====================================================== */
+
+   /* === VARIABLES === */
+:root{
+  /* Color */
+  --bg: hsl(240, 11%, 6%);
+  --card-bg: hsl(240, 11%, 12%);
+  --card-bg-soft: hsl(240, 11%, 14%);
+  --accent: hsl(252, 100%, 76%);
+  --accent-soft: hsl(257, 100%, 83%);
+  --text-main: hsl(49, 65%, 90%); 
+  --text-muted: hsl(230, 15%, 74%);
+  --badge-bg: hsla(252, 100%, 76% / 0.12);
+  --badge-border: hsla(252, 100%, 76% / 0.4);
+
+  /* Typo */
+  --fs-300: clamp(14px, 12px + 0.6vw, 16px);
+  --fs-400: clamp(16px, 14px + 0.7vw, 20px);
+  --fs-500: clamp(18px, 16px + 0.7vw, 22px);
+  --fs-600: clamp(22px, 20px + 1vw, 30px);
+
+  --fw-regular: 400;
+  --fw-medium: 600;
+  --fw-bold: 700;
+
+  /* Layout */
+  --radius: 18px;
+  --radius-pill: 999px;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+}
+
+/* === RESET === */
+* { 
+  box-sizing: border-box; 
+  margin:0; 
+  padding:0; 
+}
+
+img{ 
+  display:block; 
+  max-width:100%; 
+}
+
+button, a{ 
+  cursor:pointer; 
+}
+
+/* === PAGE === */
+body {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #282248 0, var(--bg) 40%);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: var(--fs-300);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding: var(--space-4);
+}
+
+/* === CARD === */
+section.card {
+  width: min(92vw, 60rem);
+  background: linear-gradient(145deg, var(--card-bg) 0%, var(--card-bg-soft) 60%);
+  border-radius: 24px;
+  padding: var(--space-5);
+  box-shadow: 0 28px 80px hsl(260 70% 4% / 0.75);
+}
+
+
+/* === HEADER === */
+.card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.card-header img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid hsla(0 0% 100% / 0.28);
+  box-shadow: 0 0 0 4px hsla(264 86% 68% / 0.3);
+}
+
+.card-header h1 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.02em;
+}
+
+.card-role {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-medium);
+  color: var(--accent-soft);
+}
+
+.card-badge {
+  margin-top: var(--space-2);
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: radial-gradient(circle at top right, #282248 0, var(--bg) 60%);
+  color: var(--text-main);
+  border: 1px solid var(--badge-border);
+  font-size: 0.9rem;
+  max-width: 32rem;
+}
+
+.card-location {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  max-width: 32rem;
+}
+
+/* === TITLES COLUMN === */
+
+.card-column {
+  margin-top: var(--space-3);
+}
+
+.card-column h2 {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+
+/* === LINK === */
+.card-column a {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-pill);
+  background: hsla(0 0% 100% / 0.03);
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  margin-top: var(--space-2);
+  text-align: left;
+  border: 1px solid hsla(0 0% 100% / 0.06);
+  transition:
+    transform 0.15s ease,
+    background-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.card-column a:first-of-type {
+  margin-top: 0;
+}
+
+.card-column a:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+.card-column a:active {
+  transform: translateY(0);
+}
+
+.card-column a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 70%, white 30%);
+  outline-offset: 3px;
+}
+
+/* === ACCESSIBILYTY === */
+@media (prefers-reduced-motion: reduce){
+  * { 
+    transition: none; 
+  }
+}
+
+/* === RESPONSIVE === */
+@media (min-width: 900px) {
+  .card-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+    grid-template-areas:
+      "header about"
+      "work   school";
+    column-gap: var(--space-5);
+    row-gap: var(--space-4);
+    align-items: start;
+  }
+
+  .card-header {
+    grid-area: header;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .card-column-about {
+    grid-area: about;
+  }
+
+  .card-column-work {
+    grid-area: work;
+  }
+
+  .card-column-school {
+    grid-area: school;
+  }
+}
+
