@@ -14,7 +14,7 @@ import project6 from "../assets/ImageProjects/projet6.png";
 import iconWorld from "../assets/ImageProjects/world.png";
 import GarbageCityVideo from "../assets/videos/garbage_city.mp4";
 import infoDropDownVideo from "../assets/videos/info_dropdown.mp4";
-import PortfolioV1Video from "../assets/videos/Portfolio_v1.mp4";
+import MoveUp from "../assets/videos/move_up.mp4";
 import PortfolioV2Video from "../assets/videos/portfolio_v2.mp4";
 import sharkapuceVideo from "../assets/videos/sharkapuce_media.mp4";
 import tatooineVideo from "../assets/videos/tatooine_interim.mp4";
@@ -67,7 +67,7 @@ const projects: Project[] = [
       {
         icon: iconUser,
         label: "project_icon_github",
-        url: "https://github.com/Harmajabb/Tatooine_Interim",
+        url: "https://github.com/Harmajabb/portfolio-tatooine_interim",
       },
       {
         icon: iconMusic,
@@ -91,7 +91,7 @@ const projects: Project[] = [
       {
         icon: iconUser,
         label: "project_icon_github",
-        url: "https://github.com/Joachim-masson/mediaSharkapuces",
+        url: "https://github.com/Harmajabb/portfolio-mediaSharkapuce",
       },
       {
         icon: iconMusic,
@@ -153,15 +153,22 @@ const projects: Project[] = [
     title: "project_portfolio_v1_title",
     description: "project_portfolio_v1_card_subtitle",
     image: project6,
-    techs: ["WordPress", "Divi", "Yoast SEO", "FileZilla"],
+    techs: [
+      "React",
+      "FullCalendar",
+      "Express.js(API JSON)",
+      "Jira",
+      "A11Y",
+      "UX/UI",
+    ],
     icons: [
       {
         icon: iconUser,
         label: "project_icon_website",
-        url: "https://leafrancois.com/",
+        url: "https://github.com/ChickenCodeSchool/Js-Crew809-TeamRocket-P2-G2-moveup",
       },
     ],
-    videoUrl: PortfolioV1Video,
+    videoUrl: MoveUp,
     constraints: "project_portfolio_v1_constraints",
     learned: "project_portfolio_v1_learned",
     fullDescription: "project_portfolio_v1_project",

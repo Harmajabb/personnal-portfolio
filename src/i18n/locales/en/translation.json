@@ -113,12 +113,12 @@
   "project_garbage_learned": "Advanced template customisation, use of external CSS, JavaScript integration into an existing engine, and responsive optimisation.",
   "project_garbage_techs": "HTML - CSS - JavaScript - modernBB",
 
-  "project_portfolio_v1_title": "Portfolio V1",
-  "project_portfolio_v1_card_subtitle": "My very first portfolio built with WordPress and Divi, UX/UI-oriented.",
-  "project_portfolio_v1_project": "First version of my professional portfolio, built with Divi. UX-oriented project with custom sections and full WordPress management.",
-  "project_portfolio_v1_constraints": "No-code workflow, Divi builder limitations, and responsive optimisation.",
-  "project_portfolio_v1_learned": "Creating a professional showcase website, structuring content, managing a CMS, and handling OVH domain management via FileZilla.",
-  "project_portfolio_v1_techs": "WordPress - Divi - Yoast SEO - FileZilla",
+  "project_portfolio_v1_title": "Move Up",
+  "project_portfolio_v1_card_subtitle": "Team-built fitness web application with interactive planning and enhanced accessibility.",
+  "project_portfolio_v1_project": "Move Up is a fitness web app built as a team of six. The Express backend (with JSON data) was developed by another team member. I worked on integrating the FullCalendar planning system, connecting it to the API, and improving accessibility and UX/UI consistency.",
+  "project_portfolio_v1_constraints": "Team coordination, integrating a dynamic calendar connected to an Express JSON API, meeting accessibility standards, maintaining a consistent design system, handling interactive UI elements, and setting up agile project organisation with Jira.",
+  "project_portfolio_v1_learned": "Front-to-back integration with Express, advanced use of FullCalendar, accessible interface design, agile collaboration, ticket management with Jira, and iterative improvement of a shared design system.",
+  "project_portfolio_v1_techs": "React - JavaScript - FullCalendar - Express.js (JSON API) - HTML - CSS - Accessibility - UX/UI - Jira - Agile",
 
   "about_block_who_title": "Who I am",
   "about_block_who_text": "Currently fully immersed in a 5-month bootcamp at Wild Code School, I am developing strong expertise in front-end development and UI design. My priority: creating interfaces that reduce cognitive friction and make digital experiences accessible to everyone. For me, accessibility isn't optional - it's the starting point.",

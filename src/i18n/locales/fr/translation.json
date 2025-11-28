@@ -113,12 +113,15 @@
   "project_garbage_learned": "Personnalisation avancée de templates, utilisation de CSS externe, intégration JS dans un moteur existant, optimisation du responsive.",
   "project_garbage_techs": "HTML - CSS - JavaScript - modernBB",
 
-  "project_portfolio_v1_title": "Portfolio V1",
-  "project_portfolio_v1_card_subtitle": "Mon premier portfolio réalisé avec WordPress et Divi, orienté UX/UI.",
-  "project_portfolio_v1_project": "Première version de mon portfolio professionnel, construite avec Divi. Projet orienté UX, intégration de sections personnalisées et gestion complète d'un site WordPress.",
-  "project_portfolio_v1_constraints": "Travail no-code, limitations du builder Divi, optimisation responsive.",
-  "project_portfolio_v1_learned": "Création d'un site vitrine professionnel, structuration du contenu, gestion d'un CMS, design cohérent et gestion du nom de domaine OVH avec FileZilla.",
-  "project_portfolio_v1_techs": "WordPress - Divi - Yoast SEO - FileZilla",
+
+  "project_portfolio_v1_title": "Move Up",
+  "project_portfolio_v1_card_subtitle": "Application web de fitness développée en équipe : planning interactif, espace utilisateur et accessibilité renforcée.",
+  "project_portfolio_v1_project": "Move Up est une application de fitness réalisée en équipe. Le backend Express (avec données JSON) a été développé par un membre du groupe. De mon côté, j'ai géré l'intégration du planning FullCalendar, sa connexion avec l'API, ainsi que l'accessibilité et la cohérence UX/UI du site.",
+  "project_portfolio_v1_constraints": "Coordination de groupe, intégration d'un planning dynamique relié au backend Express, respect des bonnes pratiques d'accessibilité, maintien d'un design system cohérent, gestion d'interfaces interactives et mise en place d'un suivi agile via Jira.",
+  "project_portfolio_v1_learned": "Intégration front-back avec Express, utilisation avancée de FullCalendar, mise en place de fonctionnalités accessibles, collaboration agile, gestion de tickets avec Jira et travail sur l'amélioration continue d'un design system en équipe.",
+  "project_portfolio_v1_techs": "React - JavaScript - FullCalendar - Express.js (API JSON) - HTML - CSS - Accessibilité - UX/UI - Jira - Méthode Agile",
+
+
 
   "about_block_who_title": "Qui suis-je",
   "about_block_who_text": "Actuellement en immersion totale à la Wild Code School (5 mois de bootcamp), je forge mon expertise frontend et conception UI avec une priorité : créer des interfaces qui réduisent la friction cognitive et ouvrent le digital à tous. L'accessibilité n'est pas un bonus, c'est le point de départ.",
