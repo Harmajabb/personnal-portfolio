@@ -74,6 +74,11 @@ const projects: Project[] = [
         label: "project_icon_figma",
         url: "https://www.figma.com/design/S8qbF3WjNu2Ao8M0I0PS9P/Tatooine-Iterim-une-mandale-ou-rien?node-id=0-1&t=Qn6UbMmyjy4MMGnM-1",
       },
+      {
+        icon: iconWorld,
+        label: "project_icon_website",
+        url: "https://portfolio-tatooine-interim.vercel.app/",
+      },
     ],
     videoUrl: tatooineVideo,
     constraints: "project_tatooine_constraints",
@@ -97,6 +102,11 @@ const projects: Project[] = [
         icon: iconMusic,
         label: "project_icon_figma",
         url: "https://www.figma.com/design/vVdw8sLIFfYATBgTg5JBRx/Sharkpuce-team-library?t=j6Uo1UKu4O0e6op9-1",
+      },
+      {
+        icon: iconWorld,
+        label: "project_icon_website",
+        url: "https://harmajabb.github.io/portfolio-mediaSharkapuce/pages/dvd-page.html",
       },
     ],
     videoUrl: sharkapuceVideo,
