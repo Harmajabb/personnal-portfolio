@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import ProjectCard, { type ProjectActionIcon } from "./ProjectCard";
 import "./ProjectsSection.css";
 
-import iconMusic from "../assets/ImageProjects/figmaicon.png";
-import iconUser from "../assets/ImageProjects/githubicon.png";
+import iconFigma from "../assets/ImageProjects/figmaicon.png";
+import iconGitHub from "../assets/ImageProjects/githubicon.png";
 import project1 from "../assets/ImageProjects/projet1.png";
 import project2 from "../assets/ImageProjects/projet2.png";
 import project3 from "../assets/ImageProjects/projet3.png";
@@ -41,7 +41,7 @@ const projects: Project[] = [
     techs: ["React", "TypeScript", "Node.js", "CSS"],
     icons: [
       {
-        icon: iconUser,
+        icon: iconGitHub,
         label: "project_icon_github",
         url: "https://github.com/Harmajabb/personnal-portfolio",
       },
@@ -65,14 +65,9 @@ const projects: Project[] = [
     techs: ["React", "JavaScript", "CSS"],
     icons: [
       {
-        icon: iconUser,
+        icon: iconGitHub,
         label: "project_icon_github",
         url: "https://github.com/Harmajabb/portfolio-tatooine_interim",
-      },
-      {
-        icon: iconMusic,
-        label: "project_icon_figma",
-        url: "https://www.figma.com/design/S8qbF3WjNu2Ao8M0I0PS9P/Tatooine-Iterim-une-mandale-ou-rien?node-id=0-1&t=Qn6UbMmyjy4MMGnM-1",
       },
       {
         icon: iconWorld,
@@ -94,14 +89,9 @@ const projects: Project[] = [
     techs: ["HTML", "CSS", "JavaScript"],
     icons: [
       {
-        icon: iconUser,
+        icon: iconGitHub,
         label: "project_icon_github",
         url: "https://github.com/Harmajabb/portfolio-mediaSharkapuce",
-      },
-      {
-        icon: iconMusic,
-        label: "project_icon_figma",
-        url: "https://www.figma.com/design/vVdw8sLIFfYATBgTg5JBRx/Sharkpuce-team-library?t=j6Uo1UKu4O0e6op9-1",
       },
       {
         icon: iconWorld,
@@ -123,7 +113,7 @@ const projects: Project[] = [
     techs: ["HTML", "CSS", "JavaScript"],
     icons: [
       {
-        icon: iconUser,
+        icon: iconGitHub,
         label: "project_icon_github",
         url: "https://github.com/Harmajabb/intro-section-dropdown",
       },
@@ -173,7 +163,7 @@ const projects: Project[] = [
     ],
     icons: [
       {
-        icon: iconUser,
+        icon: iconGitHub,
         label: "project_icon_website",
         url: "https://github.com/ChickenCodeSchool/Js-Crew809-TeamRocket-P2-G2-moveup",
       },

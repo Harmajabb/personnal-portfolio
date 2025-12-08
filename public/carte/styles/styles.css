@@ -4,15 +4,15 @@
    Description: Stylesheet for Social links profile
    ====================================================== */
 
-   /* === VARIABLES === */
-:root{
+/* === VARIABLES === */
+:root {
   /* Color */
   --bg: hsl(240, 11%, 6%);
   --card-bg: hsl(240, 11%, 12%);
   --card-bg-soft: hsl(240, 11%, 14%);
   --accent: hsl(252, 100%, 76%);
   --accent-soft: hsl(257, 100%, 83%);
-  --text-main: hsl(49, 65%, 90%); 
+  --text-main: hsl(49, 65%, 90%);
   --text-muted: hsl(230, 15%, 74%);
   --badge-bg: hsla(252, 100%, 76% / 0.12);
   --badge-border: hsla(252, 100%, 76% / 0.4);
@@ -38,19 +38,20 @@
 }
 
 /* === RESET === */
-* { 
-  box-sizing: border-box; 
-  margin:0; 
-  padding:0; 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-img{ 
-  display:block; 
-  max-width:100%; 
+img {
+  display: block;
+  max-width: 100%;
 }
 
-button, a{ 
-  cursor:pointer; 
+button,
+a {
+  cursor: pointer;
 }
 
 /* === PAGE === */
@@ -59,9 +60,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top left, #282248 0, var(--bg) 40%);
+  background: var(--card-bg);
   color: var(--text-main);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
   font-size: var(--fs-300);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -69,14 +75,18 @@ body {
 }
 
 /* === CARD === */
-section.card {
+main.card {
   width: min(92vw, 60rem);
-  background: linear-gradient(145deg, var(--card-bg) 0%, var(--card-bg-soft) 60%);
+  background: linear-gradient(
+    145deg,
+    var(--card-bg) 0%,
+    var(--card-bg-soft) 60%
+  );
   border-radius: 24px;
   padding: var(--space-5);
-  box-shadow: 0 28px 80px hsl(260 70% 4% / 0.75);
+  box-shadow: 0 28px 20px hsl(260 70% 4% / 0.75);
+  position: relative;
 }
-
 
 /* === HEADER === */
 .card-layout {
@@ -121,13 +131,20 @@ section.card {
   color: var(--text-main);
   border: 1px solid var(--badge-border);
   font-size: 0.9rem;
-  max-width: 32rem;
+  max-width: 25rem;
 }
 
 .card-location {
   margin-top: var(--space-2);
   color: var(--text-muted);
   max-width: 32rem;
+}
+
+.card-footer {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 /* === TITLES COLUMN === */
@@ -185,9 +202,9 @@ section.card {
 }
 
 /* === ACCESSIBILYTY === */
-@media (prefers-reduced-motion: reduce){
-  * { 
-    transition: none; 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
   }
 }
 
@@ -197,17 +214,17 @@ section.card {
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
     grid-template-areas:
-      "header about"
+      "header  header"
       "work   school";
     column-gap: var(--space-5);
-    row-gap: var(--space-4);
+    row-gap: var(--space-2);
     align-items: start;
   }
 
   .card-header {
     grid-area: header;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
   }
 
   .card-column-about {
@@ -222,4 +239,3 @@ section.card {
     grid-area: school;
   }
 }
-
