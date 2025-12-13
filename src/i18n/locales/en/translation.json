@@ -9,12 +9,12 @@
   "nav_about": "About",
   "nav_contact": "Contact",
 
-  "hero_tagline": "Front-End · UI / UX · Accessibility",
+  "hero_tagline": "UX/UI design · Accessibility (A11Y) · Design System",
   "hero_heading": "I design clear and accessible user interfaces.",
   "hero_cta_projects": "View my projects",
   "hero_cta_contact": "Contact me",
-  "hero_subtitle": "As a front-end developer and UI/UX designer, I create accessible (A11Y), high-performance, user-centred web experiences.",
-  "hero_availability": "Available from February 23 2026 for UX/UI and Accessibility (A11Y) roles",
+  "hero_subtitle": "UX/UI Designer specialized in accessibility (A11Y), I design inclusive and high-performance interfaces with a design-system approach and solid front-end foundations.",
+  "hero_availability": "Open to full-time opportunities - UX/UI · Accessibility · Design System",
 
   "section_projects_title": "My projects",
 
@@ -55,6 +55,12 @@
   "skills_uxui_figma": "Figma",
   "skills_uxui_xd": "Adobe XD",
   "skills_uxui_miro": "Miro",
+  "skills_uxui_archi": "Information Architecture",
+  "skills_uxui_design_system": "Design system",
+  "skills_uxui_accessible": "Accessible UX",
+  "skills_uxui_user_test": "User testing",
+  "skills_uxui_cognitive": "Cognitive Ergonomics",
+  "skills_uxui_user_flow": "user Flows",
   "skills_group_visual": "Visual Design & Graphic Creation",
   "skills_visual_illustrator": "Illustrator",
   "skills_visual_photoshop": "Photoshop",
@@ -127,7 +133,7 @@
   "about_block_strengths_text": "My strength lies in front-end development. What sets me apart: systematically integrating project management, UX/UI design, and accessibility (A11Y) into every project. The result? Interfaces that perform, engage, and include. No compromises.",
 
   "about_block_goal_title": "My goal",
-  "about_block_goal_text": "I am seeking a work-study position as an Application Developer / Designer. My ambition: build ergonomic digital experiences, deepen the connection between cognitive habits and UX, and create a borderless digital career.",
+  "about_block_goal_text": "Designing ergonomic, accessible, and high-performance user experiences by bridging UX cognitive patterns, accessibility (A11Y), and front-end development. In the long term, my goal is to build a borderless digital career, progressively moving toward coordination and project leadership roles.",
 
   "about_block_funfact_title": "Fun fact",
   "about_block_funfact_text": "I embrace my paradoxes: deaf yet a devoted cinephile, sedentary behind my code but ready to wander the UK or Ireland at the slightest opportunity. Between building PCs, creating disability-focused comics, and role-playing games, I turn every passion into a skill."

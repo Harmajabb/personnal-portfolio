@@ -9,12 +9,12 @@
   "nav_about": "À propos",
   "nav_contact": "Contact",
 
-  "hero_tagline": "FRONT-END · UI / UX · ACCESSIBILITÉ",
+  "hero_tagline": "UX/UI Design · Accessibilité (A11Y) · Design System",
   "hero_heading": "JE CONÇOIS DES INTERFACES CLAIRES ET ACCESSIBLES.",
   "hero_cta_projects": "VOIR MES PROJETS",
   "hero_cta_contact": "ME CONTACTER",
-  "hero_subtitle": "Développeuse front-end & UI/UX designer, je crée des expériences web accessibles (A11Y), performantes et pensées pour les utilisateurs.",
-  "hero_availability": "Disponible le 23 février 2026 - UX/UI · Accessibilité · Design System",
+  "hero_subtitle": "UX/UI Designer spécialisée en accessibilité (A11Y), je conçois des interfaces inclusives et performantes, avec une approche design systémique et des bases solides en front-end.",
+  "hero_availability": "Ouverte aux opportunités CDI - UX/UI · Accessibilité · Design System",
 
   "section_projects_title": "Mes projets",
 
@@ -55,6 +55,12 @@
   "skills_uxui_figma": "Figma",
   "skills_uxui_xd": "Adobe XD",
   "skills_uxui_miro": "Miro",
+  "skills_uxui_archi": "Architecture de l'information",
+  "skills_uxui_design_system": "Design system",
+  "skills_uxui_accessible": "UX Accessible",
+  "skills_uxui_user_test": "Test Utilisateur",
+  "skills_uxui_cognitive": "Ergonomie Cognitive",
+  "skills_uxui_user_flow": "Parcours utilisateur",
   "skills_group_visual": "GRAPHISME & CRÉATION VISUELLE",
   "skills_visual_illustrator": "Illustrator",
   "skills_visual_photoshop": "Photoshop",
@@ -113,15 +119,12 @@
   "project_garbage_learned": "Personnalisation avancée de templates, utilisation de CSS externe, intégration JS dans un moteur existant, optimisation du responsive.",
   "project_garbage_techs": "HTML - CSS - JavaScript - modernBB",
 
-
   "project_portfolio_v1_title": "Move Up",
   "project_portfolio_v1_card_subtitle": "Application web de fitness développée en équipe : planning interactif, espace utilisateur et accessibilité renforcée.",
   "project_portfolio_v1_project": "Move Up est une application de fitness réalisée en équipe. Le backend Express (avec données JSON) a été développé par un membre du groupe. De mon côté, j'ai géré l'intégration du planning FullCalendar, sa connexion avec l'API, ainsi que l'accessibilité et la cohérence UX/UI du site.",
   "project_portfolio_v1_constraints": "Coordination de groupe, intégration d'un planning dynamique relié au backend Express, respect des bonnes pratiques d'accessibilité, maintien d'un design system cohérent, gestion d'interfaces interactives et mise en place d'un suivi agile via Jira.",
   "project_portfolio_v1_learned": "Intégration front-back avec Express, utilisation avancée de FullCalendar, mise en place de fonctionnalités accessibles, collaboration agile, gestion de tickets avec Jira et travail sur l'amélioration continue d'un design system en équipe.",
   "project_portfolio_v1_techs": "React - JavaScript - FullCalendar - Express.js (API JSON) - HTML - CSS - Accessibilité - UX/UI - Jira - Méthode Agile",
-
-
 
   "about_block_who_title": "Qui suis-je",
   "about_block_who_text": "Actuellement en immersion totale à la Wild Code School (5 mois de bootcamp), je forge mon expertise frontend et conception UI avec une priorité : créer des interfaces qui réduisent la friction cognitive et ouvrent le digital à tous. L'accessibilité n'est pas un bonus, c'est le point de départ.",
@@ -130,7 +133,7 @@
   "about_block_strengths_text": "Ma force : le frontend. Mon plus, y intégrer systématiquement : management de projet, design UX/UI et accessibilité (A11Y). Résultat ? Des interfaces qui performent, séduisent et incluent. Pas de compromis.",
 
   "about_block_goal_title": "Mon objectif",
-  "about_block_goal_text": "Alternance recherchée : Concepteur Développeur d'Applications. Mon ambition ? Coder des expériences ergonomiques, approfondir le lien habitudes cognitives UX, et construire une carrière digitale sans frontières.",
+  "about_block_goal_text": "Concevoir des expériences ergonomiques, accessibles et performantes, en approfondissant le lien entre habitudes cognitives UX, accessibilité (A11Y) et développement front-end. À plus long terme, mon ambition est de construire une carrière digitale sans frontières, en évoluant progressivement vers des rôles de coordination et de pilotage de projets.",
 
   "about_block_funfact_title": "Fun fact",
   "about_block_funfact_text": "Paradoxes assumés : sourde mais cinéphile assidue, sédentaire devant mon code mais baroudeuse dès que le Royaume-Uni ou l'Irlande m'appellent. Entre montage PC, création de BD militantes sur la surdité et RPGiste, je transforme chaque passion en compétence."

@@ -1,62 +1,129 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE
+html >
+  <html lang="fr">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/logo.png" />
-    <title>Léa François | Carte de visite</title>
+      <link rel="icon" type="image/png" sizes="32x32" href="./img/logo.png" />
+      <title>Léa François | Carte de visite</title>
 
-    <link rel="stylesheet" href="./styles/styles.css" />
-  </head>
+      <link rel="stylesheet" href="./styles/styles.css" />
+    </head>
 
-  <body>
-    <main class="card" aria-labelledby="profile-title">
-      <div class="card-pattern" aria-hidden="true"></div>
-      <div class="card-layout">
-        <header class="card-header">
-          <img
-            src="img/profile-pic.png"
-            alt="Portrait de Léa François, développeuse front-end"
-          />
-          <h1 id="profile-title">Léa François</h1>
+    <body>
+      <main class="card" aria-labelledby="profile-title">
+        <div class="card-pattern" aria-hidden="true"></div>
+        <div class="card-layout">
+          <header class="card-header">
+            <img src="img/profile-pic.png" alt="Photo de Léa François" />
+            <h1 id="profile-title">Léa François</h1>
 
-          <p class="card-role">
-            UX/UI Designer · Front-End React · Accessibilité (A11Y) · Design System
-          </p>
+            <p class="card-role">
+              UX/UI Designer · Front-End React · Accessibilité (A11Y) · Design
+              System
+            </p>
 
-          <p class="card-badge">
-            Disponible pour un poste en CDI - UI/UX, Design System, Accessibilité (A11Y), Front-End React
-          </p>
+            <p class="card-badge">
+              Disponible pour un poste en CDI - UI/UX, Design System,
+              Accessibilité (A11Y), Front-End React
+            </p>
 
-          <p class="card-location">
-            <strong>Mobilité hybride</strong> France (Ouest + Île-de-France) · Télétravail hybride possible.
-          </p>
-        </header>
+            <p class="card-location">
+              <strong>Mobilité hybride</strong> France (Ouest + Île-de-France) ·
+              Télétravail hybride possible.
+            </p>
+          </header>
 
-        <div class="card-column card-column-work">
-          <h2>Mes travaux</h2>
-          <a href="#">Design system Harma (UI system + Tokens + A11Y)</a>
-          <a href="#">Composants React accessibles</a>
-          <a href="https://leafrancois.com/">Portfolio</a>
-          <a href="https://github.com/Harmajabb">Profil GitHub</a>
+          <section
+            class="card-column card-column-work"
+            aria-labelledby="work-title"
+          >
+            <h2 id="work-title">Mes travaux</h2>
+            <ul class="card-links" role="list">
+              <li>
+                <a
+                  href="https://leafrancois.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Portfolio
+                  <span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/ChickenCodeSchool/Js-Crew809-TeamRocket-P2-G2-moveup"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Move Up
+                  <span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Harmajabb/portfolio-tatooine_interim"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tatooine Interim
+                  <span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Harmajabb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Profil GitHub
+                  <span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section
+            class="card-column card-column-about"
+            aria-labelledby="about-title"
+          >
+            <h2 id="about-title">À mon propos</h2>
+            <ul class="card-links" role="list">
+              <li>
+                <a href="./img/Lea_Francois_UXUI_Designer_A11Y_Design_System.pdf">
+                  Télécharger mon CV
+                </a>
+              </li>
+              <li>
+                <a href="mailto:lea.jeane.francois@gmail.com">Me contacter</a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/lea-harmajabb/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                  <span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://calendar.app.google/MwAwqV33zCgVzFnR8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Prendre un rendez-vous Google Meet
+                  <span class="sr-only">(s'ouvre dans un nouvel onglet)</span>
+                </a>
+              </li>
+            </ul>
+          </section>
         </div>
-
-        <div class="card-column card-column-school">
-        <h2>À mon propos</h2>
-          <a href="https://leafrancois.com/wp-content/uploads/2025/10/Lea_Francois_Alternance_Concepteur_Dev_Application_Devops.pdf">
-            Télécharger mon CV
-          </a>
-          <a href="mailto:lea.jeane.francois@gmail.com">Me contacter</a>
-          <a href="https://www.linkedin.com/in/lea-harmajabb/">LinkedIn</a>
-          <a href="https://calendar.app.google/MwAwqV33zCgVzFnR8">
-            Prendre un rendez-vous Google Meet
-          </a>
-        </div>
-      </div>
-            <p class="card-footer">
-        Accessible design is good design - and good design scales ·
+        <p class="card-footer" lang="en">
+          Accessible design is good design - and good design scales ·
         </p>
-    </main>
-  </body>
-</html>
+      </main>
+    </body>
+  </html>

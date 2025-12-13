@@ -1,10 +1,10 @@
 import "./Contact.css";
 import { useTranslation } from "react-i18next";
-import femIcon from "../assets/ImageFooter/frontend.png";
+import cardIcon from "../assets/ImageFooter/businesscard.svg";
 import githubIcon from "../assets/ImageFooter/github.png";
 import gmailIcon from "../assets/ImageFooter/gmail.png";
 import linkedinIcon from "../assets/ImageFooter/linkedin.png";
-import cv from "../assets/Lea_Francois_Concepteur_Developpeur_Dapplication_Alternance.pdf";
+import cv from "../assets/Lea_Francois_UXUI_Designer_A11Y_Design_System.pdf";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -32,10 +32,10 @@ export default function Contact() {
     },
     {
       id: 4,
-      label: "FrontEnd Mentor",
+      label: "Business card",
       handle: "@Harmajabb",
-      icon: femIcon,
-      link: "https://www.frontendmentor.io/profile/Harmajabb",
+      icon: cardIcon,
+      link: "../../public/carte/index.html",
     },
   ];
 

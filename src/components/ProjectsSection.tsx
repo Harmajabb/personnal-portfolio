@@ -3,20 +3,20 @@ import { useTranslation } from "react-i18next";
 import ProjectCard, { type ProjectActionIcon } from "./ProjectCard";
 import "./ProjectsSection.css";
 
-import iconFigma from "../assets/ImageProjects/figmaicon.png";
+// import iconFigma from "../assets/ImageProjects/figmaicon.png";
 import iconGitHub from "../assets/ImageProjects/githubicon.png";
 import project1 from "../assets/ImageProjects/projet1.png";
 import project2 from "../assets/ImageProjects/projet2.png";
-import project3 from "../assets/ImageProjects/projet3.png";
-import project4 from "../assets/ImageProjects/projet4.png";
-import project5 from "../assets/ImageProjects/projet5.png";
+// import project3 from "../assets/ImageProjects/projet3.png";
+// import project4 from "../assets/ImageProjects/projet4.png";
+// import project5 from "../assets/ImageProjects/projet5.png";
 import project6 from "../assets/ImageProjects/projet6.png";
 import iconWorld from "../assets/ImageProjects/world.png";
-import GarbageCityVideo from "../assets/videos/garbage_city.mp4";
-import infoDropDownVideo from "../assets/videos/info_dropdown.mp4";
+// import GarbageCityVideo from "../assets/videos/garbage_city.mp4";
+// import infoDropDownVideo from "../assets/videos/info_dropdown.mp4";
 import MoveUp from "../assets/videos/move_up.mp4";
 import PortfolioV2Video from "../assets/videos/portfolio_v2.mp4";
-import sharkapuceVideo from "../assets/videos/sharkapuce_media.mp4";
+// import sharkapuceVideo from "../assets/videos/sharkapuce_media.mp4";
 import tatooineVideo from "../assets/videos/tatooine_interim.mp4";
 
 type Project = {
@@ -59,97 +59,6 @@ const projects: Project[] = [
 
   {
     id: 2,
-    title: "project_tatooine_title",
-    description: "project_tatooine_card_subtitle",
-    image: project2,
-    techs: ["React", "JavaScript", "CSS"],
-    icons: [
-      {
-        icon: iconGitHub,
-        label: "project_icon_github",
-        url: "https://github.com/Harmajabb/portfolio-tatooine_interim",
-      },
-      {
-        icon: iconWorld,
-        label: "project_icon_website",
-        url: "https://portfolio-tatooine-interim.vercel.app/",
-      },
-    ],
-    videoUrl: tatooineVideo,
-    constraints: "project_tatooine_constraints",
-    learned: "project_tatooine_learned",
-    fullDescription: "project_tatooine_project",
-  },
-
-  {
-    id: 3,
-    title: "project_media_title",
-    description: "project_media_card_subtitle",
-    image: project3,
-    techs: ["HTML", "CSS", "JavaScript"],
-    icons: [
-      {
-        icon: iconGitHub,
-        label: "project_icon_github",
-        url: "https://github.com/Harmajabb/portfolio-mediaSharkapuce",
-      },
-      {
-        icon: iconWorld,
-        label: "project_icon_website",
-        url: "https://harmajabb.github.io/portfolio-mediaSharkapuce/pages/dvd-page.html",
-      },
-    ],
-    videoUrl: sharkapuceVideo,
-    constraints: "project_media_constraints",
-    learned: "project_media_learned",
-    fullDescription: "project_media_project",
-  },
-
-  {
-    id: 4,
-    title: "project_intro_title",
-    description: "project_intro_card_subtitle",
-    image: project4,
-    techs: ["HTML", "CSS", "JavaScript"],
-    icons: [
-      {
-        icon: iconGitHub,
-        label: "project_icon_github",
-        url: "https://github.com/Harmajabb/intro-section-dropdown",
-      },
-      {
-        icon: iconWorld,
-        label: "project_icon_website",
-        url: "https://harmajabb.github.io/intro-section-dropdown/",
-      },
-    ],
-    videoUrl: infoDropDownVideo,
-    constraints: "project_intro_constraints",
-    learned: "project_intro_learned",
-    fullDescription: "project_intro_project",
-  },
-
-  {
-    id: 5,
-    title: "project_garbage_title",
-    description: "project_garbage_card_subtitle",
-    image: project5,
-    techs: ["HTML", "CSS", "JavaScript", "modernBB"],
-    icons: [
-      {
-        icon: iconWorld,
-        label: "project_icon_website",
-        url: "https://garbage-city.forumactif.com/",
-      },
-    ],
-    videoUrl: GarbageCityVideo,
-    constraints: "project_garbage_constraints",
-    learned: "project_garbage_learned",
-    fullDescription: "project_garbage_project",
-  },
-
-  {
-    id: 6,
     title: "project_portfolio_v1_title",
     description: "project_portfolio_v1_card_subtitle",
     image: project6,
@@ -173,6 +82,96 @@ const projects: Project[] = [
     learned: "project_portfolio_v1_learned",
     fullDescription: "project_portfolio_v1_project",
   },
+  {
+    id: 3,
+    title: "project_tatooine_title",
+    description: "project_tatooine_card_subtitle",
+    image: project2,
+    techs: ["React", "JavaScript", "CSS"],
+    icons: [
+      {
+        icon: iconGitHub,
+        label: "project_icon_github",
+        url: "https://github.com/Harmajabb/portfolio-tatooine_interim",
+      },
+      {
+        icon: iconWorld,
+        label: "project_icon_website",
+        url: "https://portfolio-tatooine-interim.vercel.app/",
+      },
+    ],
+    videoUrl: tatooineVideo,
+    constraints: "project_tatooine_constraints",
+    learned: "project_tatooine_learned",
+    fullDescription: "project_tatooine_project",
+  },
+
+  // {
+  //   id: 4,
+  //   title: "project_media_title",
+  //   description: "project_media_card_subtitle",
+  //   image: project3,
+  //   techs: ["HTML", "CSS", "JavaScript"],
+  //   icons: [
+  //     {
+  //       icon: iconGitHub,
+  //       label: "project_icon_github",
+  //       url: "https://github.com/Harmajabb/portfolio-mediaSharkapuce",
+  //     },
+  //     {
+  //       icon: iconWorld,
+  //       label: "project_icon_website",
+  //       url: "https://harmajabb.github.io/portfolio-mediaSharkapuce/pages/dvd-page.html",
+  //     },
+  //   ],
+  //   videoUrl: sharkapuceVideo,
+  //   constraints: "project_media_constraints",
+  //   learned: "project_media_learned",
+  //   fullDescription: "project_media_project",
+  // },
+
+  // {
+  //   id: 5,
+  //   title: "project_intro_title",
+  //   description: "project_intro_card_subtitle",
+  //   image: project4,
+  //   techs: ["HTML", "CSS", "JavaScript"],
+  //   icons: [
+  //     {
+  //       icon: iconGitHub,
+  //       label: "project_icon_github",
+  //       url: "https://github.com/Harmajabb/intro-section-dropdown",
+  //     },
+  //     {
+  //       icon: iconWorld,
+  //       label: "project_icon_website",
+  //       url: "https://harmajabb.github.io/intro-section-dropdown/",
+  //     },
+  //   ],
+  //   videoUrl: infoDropDownVideo,
+  //   constraints: "project_intro_constraints",
+  //   learned: "project_intro_learned",
+  //   fullDescription: "project_intro_project",
+  // },
+
+  // {
+  //   id: 6,
+  //   title: "project_garbage_title",
+  //   description: "project_garbage_card_subtitle",
+  //   image: project5,
+  //   techs: ["HTML", "CSS", "JavaScript", "modernBB"],
+  //   icons: [
+  //     {
+  //       icon: iconWorld,
+  //       label: "project_icon_website",
+  //       url: "https://garbage-city.forumactif.com/",
+  //     },
+  //   ],
+  //   videoUrl: GarbageCityVideo,
+  //   constraints: "project_garbage_constraints",
+  //   learned: "project_garbage_learned",
+  //   fullDescription: "project_garbage_project",
+  // },
 ];
 
 export default function ProjectsSection() {
