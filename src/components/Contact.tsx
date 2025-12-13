@@ -35,7 +35,7 @@ export default function Contact() {
       label: "Business card",
       handle: "@Harmajabb",
       icon: cardIcon,
-      link: "../../public/carte/index.html",
+      link: "https://www.leafrancois.com/carte/",
     },
   ];
 
