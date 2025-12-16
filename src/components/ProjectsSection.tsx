@@ -42,12 +42,12 @@ const projects: Project[] = [
     icons: [
       {
         icon: iconGitHub,
-        label: "project_icon_github",
+        labelKey: "project_modal_github",
         url: "https://github.com/Harmajabb/personnal-portfolio",
       },
       {
         icon: iconWorld,
-        label: "project_icon_website",
+        labelKey: "project_modal_demo",
         url: "https://leafrancois.com/",
       },
     ],
@@ -73,7 +73,7 @@ const projects: Project[] = [
     icons: [
       {
         icon: iconGitHub,
-        label: "project_icon_website",
+        labelKey: "project_modal_github",
         url: "https://github.com/ChickenCodeSchool/Js-Crew809-TeamRocket-P2-G2-moveup",
       },
     ],
@@ -91,12 +91,12 @@ const projects: Project[] = [
     icons: [
       {
         icon: iconGitHub,
-        label: "project_icon_github",
+        labelKey: "project_modal_github",
         url: "https://github.com/Harmajabb/portfolio-tatooine_interim",
       },
       {
         icon: iconWorld,
-        label: "project_icon_website",
+        labelKey: "project_modal_demo",
         url: "https://portfolio-tatooine-interim.vercel.app/",
       },
     ],

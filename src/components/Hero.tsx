@@ -43,7 +43,7 @@ export default function Hero() {
           <img
             className="hero-image"
             src={heroImage}
-            alt="Illustration de Lea Francois travaillant sur une interface"
+            alt={t("a11_hero_alt")}
           />
         </div>
       </div>

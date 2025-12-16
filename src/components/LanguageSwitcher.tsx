@@ -15,17 +15,17 @@ export default function LanguageSwitcher() {
         type="button"
         className={i18n.language === "fr" ? "is-active" : ""}
         onClick={() => changeLanguage("fr")}
-        aria-label="Changer la langue"
+        aria-label="Changer la langue en français"
       >
-        FR
+        fr
       </button>
       <button
         type="button"
         className={i18n.language === "en" ? "is-active" : ""}
         onClick={() => changeLanguage("en")}
-        aria-label="Changer la langue"
+        aria-label="Changer la langue en anglais"
       >
-        EN
+        en
       </button>
     </div>
   );

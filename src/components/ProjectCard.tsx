@@ -1,8 +1,9 @@
 import "./ProjectCard.css";
+import { useTranslation } from "react-i18next";
 
 export type ProjectActionIcon = {
   icon: string;
-  label: string;
+  labelKey: string;
   url: string;
 };
 
@@ -23,20 +24,25 @@ export default function ProjectCard({
   icons,
   onClick,
 }: ProjectCardProps) {
+  const { t } = useTranslation();
+
   return (
-    <button
-      type="button"
+    <article
       className="project-card"
-      onClick={onClick}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          onClick?.();
-        }
-      }}
+      aria-label={t("a11y_projectCard", { title })}
     >
+      {onClick && (
+        <button
+          type="button"
+          className="project-card-overlay"
+          onClick={onClick}
+          aria-label={t("a11y_openProject", { title })}
+        />
+      )}
+
       {/* IMAGE */}
       <div className="project-image">
-        <img src={image} alt={`Aperçu du projet ${title}`} />
+        <img src={image} alt={t("a11y_projectPreview", { title })} />
       </div>
 
       {/* TITRE */}
@@ -47,21 +53,27 @@ export default function ProjectCard({
 
       {/* ICÔNES D'ACTIONS */}
       <div className="project-icons">
-        {icons.map(({ icon, label, url }) => (
+        {icons.map(({ icon, labelKey, url }) => (
           <a
-            key={label}
+            key={labelKey}
             href={url}
             target="_blank"
             rel="noopener noreferrer"
             className="project-icon-link"
           >
-            <img src={icon} alt={label} className="project-icon" />
+            <img
+              src={icon}
+              alt=""
+              aria-hidden="true"
+              className="project-icon"
+            />
+            <span className="sr-only">{t(labelKey)}</span>
           </a>
         ))}
       </div>
 
       {/* TECHNOLOGIES */}
       <p className="project-techs">{techs.join(" — ")}</p>
-    </button>
+    </article>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import scrollUpIcon from "../assets/scroll-up.svg";
 import "./ScrollUpButton.css";
+import { t } from "i18next";
 
 function ScrollUpButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +22,7 @@ function ScrollUpButton() {
       type="button"
       onClick={scrollToTop}
       className={`scroll-up ${isVisible ? "visible" : "hidden"}`}
-      aria-label="Remonter en haut"
+      aria-label={t("a11_scrollUP")}
     >
       <img
         src={scrollUpIcon}

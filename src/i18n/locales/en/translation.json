@@ -1,5 +1,20 @@
 {
-  "hero_title": "ME.",
+  "a11_scrollUP": "scroll up",
+  "a11_projectCard": "Project: {{title}}",
+  "a11_openProject": "Open project {{title}}",
+  "a11_projectPreview": "Preview of project {{title}}",
+
+  "contact_email": "Email",
+  "contact_linkedin": "LinkedIn",
+  "contact_github": "GitHub",
+  "contact_card": "Business card",
+
+  "contact_openEmail": "Send me an email",
+  "contact_openLinkedIn": "Open my LinkedIn profile",
+  "contact_openGithub": "Open my GitHub repository",
+  "contact_openCard": "Open my business card",
+
+  "hero_title": "Me.",
   "about_title": "About me",
   "contact_findme": "Find me",
   "cv_button": "Download my resume",
@@ -60,7 +75,7 @@
   "skills_uxui_accessible": "Accessible UX",
   "skills_uxui_user_test": "User testing",
   "skills_uxui_cognitive": "Cognitive Ergonomics",
-  "skills_uxui_user_flow": "user Flows",
+  "skills_uxui_user_flow": "User Flows",
   "skills_group_visual": "Visual Design & Graphic Creation",
   "skills_visual_illustrator": "Illustrator",
   "skills_visual_photoshop": "Photoshop",
@@ -83,6 +98,8 @@
   "project_modal_project": "Project",
   "project_modal_constraints": "Constraints",
   "project_modal_learned": "What I learned",
+  "project_modal_github": "Open GitHub repository",
+  "project_modal_demo": "Open live demo",
 
   "project_portfolio_v2_title": "Portfolio V2",
   "project_portfolio_v2_card_subtitle": "New version of my portfolio developed with React and TypeScript.",

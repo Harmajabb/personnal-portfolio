@@ -11,28 +11,32 @@ export default function Contact() {
   const contacts = [
     {
       id: 1,
-      label: "Email",
+      labelKey: "contact_email",
+      actionKey: "contact_openEmail",
       handle: "lea.jeane.francois",
       icon: gmailIcon,
       link: "mailto:lea.jeane.francois@gmail.com",
     },
     {
       id: 2,
-      label: "LinkedIn",
+      labelKey: "contact_linkedin",
+      actionKey: "contact_openLinkedIn",
       handle: "@Harmajabb",
       icon: linkedinIcon,
       link: "https://www.linkedin.com/in/lea-harmajabb/",
     },
     {
       id: 3,
-      label: "Github",
+      labelKey: "contact_github",
+      actionKey: "contact_openGithub",
       handle: "@Harmajabb",
       icon: githubIcon,
       link: "https://github.com/Harmajabb",
     },
     {
       id: 4,
-      label: "Business card",
+      labelKey: "contact_card",
+      actionKey: "contact_openCard",
       handle: "@Harmajabb",
       icon: cardIcon,
       link: "https://www.leafrancois.com/carte/",
@@ -52,9 +56,15 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={item.icon} alt="" className="contact-icon" />
-            <p className="contact-label">{item.label}</p>
+            <img
+              src={item.icon}
+              alt=""
+              aria-hidden="true"
+              className="contact-icon"
+            />
+            <p className="contact-label">{t(item.labelKey)}</p>
             <p className="contact-handle">{item.handle}</p>
+            <span className="sr-only">{t(item.actionKey)}</span>
           </a>
         ))}
       </div>
