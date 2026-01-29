@@ -1,8 +1,26 @@
+/**
+ * ProjectsSection.tsx - Section galerie des projets
+ *
+ * Affiche une grille de cartes de projets.
+ * Au clic sur une carte, ouvre une modale avec plus de détails :
+ * - Vidéo de démonstration
+ * - Description complète
+ * - Contraintes et apprentissages
+ *
+ * Fonctionnalités :
+ * - Grille responsive de cartes
+ * - Modale accessible (fermeture avec ESC, aria-modal)
+ * - Vidéo de présentation dans la modale
+ */
+
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ProjectCard, { type ProjectActionIcon } from "./ProjectCard";
 import "./ProjectsSection.css";
 
+// ============================================
+// IMPORTS DES RESSOURCES
+// ============================================
 // import iconFigma from "../assets/ImageProjects/figmaicon.png";
 import iconGitHub from "../assets/ImageProjects/githubicon.png";
 import project1 from "../assets/ImageProjects/projet1.png";
@@ -19,19 +37,35 @@ import PortfolioV2Video from "../assets/videos/portfolio_v2.mp4";
 // import sharkapuceVideo from "../assets/videos/sharkapuce_media.mp4";
 import tatooineVideo from "../assets/videos/tatooine_interim.mp4";
 
+// ============================================
+// TYPE TYPESCRIPT
+// ============================================
+
+/**
+ * Structure d'un projet
+ * Contient toutes les informations nécessaires pour la carte et la modale
+ */
 type Project = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  techs: string[];
-  icons: ProjectActionIcon[];
-  videoUrl: string;
-  constraints: string;
-  learned: string;
-  fullDescription: string;
+  id: number; // Identifiant unique
+  title: string; // Clé de traduction du titre
+  description: string; // Clé de traduction de la description courte
+  image: string; // Image de la carte (importée)
+  techs: string[]; // Liste des technologies utilisées
+  icons: ProjectActionIcon[]; // Icônes d'action (GitHub, démo...)
+  videoUrl: string; // URL de la vidéo de démonstration
+  constraints: string; // Clé de traduction des contraintes
+  learned: string; // Clé de traduction des apprentissages
+  fullDescription: string; // Clé de traduction de la description complète
 };
 
+// ============================================
+// DONNÉES DES PROJETS
+// ============================================
+
+/**
+ * Tableau des projets à afficher
+ * Chaque projet contient ses données et ses clés de traduction
+ */
 const projects: Project[] = [
   {
     id: 1,
@@ -106,6 +140,7 @@ const projects: Project[] = [
     fullDescription: "project_tatooine_project",
   },
 
+  // Projets commentés (désactivés pour l'instant)
   // {
   //   id: 4,
   //   title: "project_media_title",
@@ -174,60 +209,93 @@ const projects: Project[] = [
   // },
 ];
 
+// ============================================
+// COMPOSANT
+// ============================================
+
 export default function ProjectsSection() {
+  /**
+   * État pour stocker le projet actuellement sélectionné (pour la modale)
+   * null = aucune modale ouverte
+   */
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const { t } = useTranslation();
 
-  // fermeture avec ESC
+  /**
+   * useEffect pour gérer la fermeture de la modale avec la touche Escape
+   * C'est une bonne pratique d'accessibilité
+   */
   useEffect(() => {
+    // Fonction qui écoute les touches du clavier
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") {
-        setSelectedProject(null);
+        setSelectedProject(null); // Ferme la modale
       }
     }
 
+    // Ajoute l'écouteur seulement si une modale est ouverte
     if (selectedProject) {
       document.addEventListener("keydown", handleKeyDown);
     }
 
+    // Cleanup : retire l'écouteur quand le composant se démonte
+    // ou quand selectedProject change
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedProject]);
+  }, [selectedProject]); // Se relance quand selectedProject change
 
   return (
     <section className="projects-section" id="projects">
+      {/* Titre de section */}
       <h2 className="projects-title">{t("section_projects_title")}</h2>
 
+      {/* Grille des cartes de projets */}
       <div className="projects-grid">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
-            title={t(project.title)}
+            title={t(project.title)} // Texte traduit
             description={t(project.description)}
             image={project.image}
             techs={project.techs}
             icons={project.icons}
-            onClick={() => setSelectedProject(project)}
+            onClick={() => setSelectedProject(project)} // Ouvre la modale
           />
         ))}
       </div>
 
-      {/* MODAL */}
+      {/*
+        MODALE - Rendu conditionnel
+        S'affiche uniquement si un projet est sélectionné
+      */}
       {selectedProject && (
+        // Overlay sombre derrière la modale
         <div className="modal-overlay">
+          {/*
+            Modale avec attributs d'accessibilité :
+            - role="dialog" : indique une fenêtre de dialogue
+            - aria-modal="true" : indique que c'est modal (bloque le reste)
+          */}
           <div className="modal" role="dialog" aria-modal="true">
+            {/* Bouton de fermeture */}
             <button
               type="button"
               className="modal-close"
               aria-label="Fermer la fenêtre"
               onClick={() => setSelectedProject(null)}
             >
-              &times;
+              &times; {/* Caractère × */}
             </button>
 
+            {/* Titre du projet */}
             <h3 className="modal-title">{t(selectedProject.title)}</h3>
 
+            {/*
+              Vidéo de démonstration
+              - controls : affiche les contrôles (play, pause, volume)
+              - muted : désactivé par défaut (bonne pratique UX)
+            */}
             <video
               className="modal-video"
               src={selectedProject.videoUrl}
@@ -235,6 +303,7 @@ export default function ProjectsSection() {
               muted
             />
 
+            {/* Trois colonnes d'information */}
             <div className="modal-columns">
               <div>
                 <h4>{t("project_modal_project")}</h4>
@@ -250,6 +319,7 @@ export default function ProjectsSection() {
               </div>
             </div>
 
+            {/* Liste des technologies utilisées */}
             <p className="modal-techs">{selectedProject.techs.join(" - ")}</p>
           </div>
         </div>

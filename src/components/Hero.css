@@ -1,57 +1,89 @@
+/**
+ * Hero.css - Styles de la section Hero
+ *
+ * Layout en deux colonnes (texte | image) sur desktop
+ * Passe en une colonne sur mobile
+ *
+ * Structure :
+ * .hero               → Section conteneur
+ * .hero-layout        → Grid pour le positionnement
+ * .hero-text          → Bloc de contenu texte
+ * .hero-image-wrapper → Conteneur de l'image avec styles
+ */
+
+/* ============================================
+   SECTION HERO
+   ============================================ */
 .hero {
   width: 100%;
-  height: 750px;
+  height: 750px; /* Hauteur fixe pour impact visuel */
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  box-sizing: border-box;
-  overflow: hidden;
+  box-sizing: border-box; /* Padding inclus dans la largeur */
+  overflow: hidden; /* Cache tout dépassement */
   background-color: var(--color-bg);
   color: var(--color-text);
 }
 
+/* ============================================
+   LAYOUT GRID
+   ============================================ */
 .hero-layout {
-  flex: 1;
+  flex: 1; /* Prend tout l'espace disponible */
   display: grid;
+  /*
+   * 1fr 1fr : deux colonnes de taille égale
+   * fr = fraction de l'espace disponible
+   */
   grid-template-columns: 1fr 1fr;
 }
 
+/* ============================================
+   BLOC TEXTE
+   ============================================ */
 .hero-text {
   padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1.7rem;
+  justify-content: center; /* Centre verticalement */
+  gap: 1.7rem; /* Espace entre les éléments enfants */
 }
 
+/* Petit texte au-dessus du titre (eyebrow text) */
 .hero-eyebrow {
   font-size: 0.9rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.15em; /* Espacement pour lisibilité en majuscules */
   text-transform: uppercase;
   line-height: 1.4;
   color: var(--color-text-secondary);
 }
 
+/* Titre principal */
 .hero-title {
-  margin: 0;
+  margin: 0; /* Reset du margin par défaut des h1 */
 }
 
+/* Permet d'afficher chaque mot sur sa propre ligne si besoin */
 .hero-title span {
   display: block;
 }
 
+/* Description sous le titre */
 .hero-tagline {
   font-size: 0.95rem;
-  max-width: 32rem;
+  max-width: 32rem; /* Limite la largeur pour la lisibilité */
   color: var(--color-text);
 }
 
+/* Conteneur des boutons CTA */
 .hero-buttons {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Passe à la ligne si pas assez de place */
 }
 
+/* Texte additionnel (disponibilité, etc.) */
 .hero-meta {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -59,44 +91,63 @@
   color: var(--color-text-secondary);
 }
 
+/* ============================================
+   IMAGE
+   ============================================ */
 .hero-image-wrapper {
   background: var(--color-bg-card);
   display: flex;
-  border-radius: 16px;
+  border-radius: 16px; /* Coins arrondis */
   border: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px var(--shadow-soft);
-  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-soft); /* Ombre pour profondeur */
+  overflow: hidden; /* L'image respecte le border-radius */
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
+  /*
+   * object-fit: cover
+   * L'image remplit son conteneur en gardant ses proportions
+   * Les parties qui dépassent sont coupées
+   */
   object-fit: cover;
-  object-position: center;
+  object-position: center; /* Centre le point de recadrage */
 }
 
+/*
+ * En mode sombre, on réduit légèrement la luminosité de l'image
+ * pour un meilleur confort visuel
+ */
 :root[data-theme="dark"] .hero-image-wrapper {
   filter: brightness(0.9);
 }
 
+/* ============================================
+   RESPONSIVE - Grand écran (1200px+)
+   ============================================ */
 @media (min-width: 1200px) {
   .hero {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1400px; /* Limite la largeur sur très grands écrans */
+    margin: 0 auto; /* Centre horizontalement */
     padding-inline: 2rem;
   }
 
   .hero-layout {
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: center; /* Centre verticalement les colonnes */
   }
 
   .hero-text {
-    max-width: 550px;
+    max-width: 550px; /* Limite la largeur du texte */
   }
 }
 
+/* ============================================
+   RESPONSIVE - Tablette (max 900px)
+   ============================================ */
 @media (max-width: 900px) {
+  /* Passe en une seule colonne */
   .hero-layout {
     grid-template-columns: 1fr;
   }
@@ -106,7 +157,7 @@
   }
 
   .hero-image-wrapper {
-    height: 260px;
+    height: 260px; /* Hauteur fixe pour l'image */
     margin: 0 1.5rem 1.5rem;
   }
 
@@ -115,9 +166,12 @@
   }
 }
 
+/* ============================================
+   RESPONSIVE - Mobile (max 600px)
+   ============================================ */
 @media (max-width: 600px) {
   .hero {
-    height: auto;
+    height: auto; /* Hauteur automatique selon le contenu */
     padding: 1.5rem 1rem 2rem;
   }
 
@@ -125,6 +179,7 @@
     padding: 2rem 0 1.5rem;
   }
 
+  /* Boutons empilés verticalement sur petit écran */
   .hero-buttons {
     flex-direction: column;
     align-items: flex-start;

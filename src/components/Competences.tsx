@@ -1,4 +1,24 @@
+/**
+ * Competences.tsx - Section des compétences (Skills)
+ *
+ * Affiche les compétences techniques et soft skills dans un layout "Bento Grid"
+ * (grille asymétrique inspirée des boîtes bento japonaises)
+ *
+ * Catégories :
+ * - UX/UI Design
+ * - Frontend Development
+ * - Project Management
+ * - No-Code Tools
+ * - Soft Skills
+ *
+ * Chaque compétence a un nom (traduit) et une icône
+ */
+
 /** biome-ignore-all assist/source/organizeImports: <too many img import> */
+// ============================================
+// IMPORTS DES ICÔNES DE COMPÉTENCES
+// ============================================
+// Vite transforme ces imports en chemins optimisés (hash, minification)
 import a11y from "../assets/ImageCompetences/Accessibility.png";
 import adaptative from "../assets/ImageCompetences/adaptative.png";
 // import ae from "../assets/ImageCompetences/aftereffects.svg";
@@ -53,23 +73,47 @@ import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 import { useTranslation } from "react-i18next";
 import "./Competences.css";
 
+// ============================================
+// TYPES TYPESCRIPT
+// ============================================
+
+/**
+ * Type pour une compétence individuelle
+ * icon est optionnel (?) car certaines compétences peuvent ne pas avoir d'icône
+ */
 type Skill = {
-  name: string;
-  icon?: string;
+  name: string; // Clé de traduction (ex: "skills_frontend_html")
+  icon?: string; // Chemin de l'icône (importé en haut)
 };
 
+/**
+ * Type pour une catégorie de compétences
+ * size définit la taille de la boîte dans le grid bento
+ */
 type SkillCategory = {
-  id: string;
-  title: string;
-  size?: "wide" | "tall" | "square";
-  skills: Skill[];
+  id: string; // Identifiant unique
+  title: string; // Clé de traduction du titre
+  size?: "wide" | "tall" | "square"; // Taille dans le grid (optionnel)
+  skills: Skill[]; // Liste des compétences
 };
 
+// ============================================
+// DONNÉES DES COMPÉTENCES
+// ============================================
+
+/**
+ * Tableau des catégories de compétences
+ * Chaque catégorie définit :
+ * - son identifiant
+ * - son titre (clé de traduction)
+ * - sa taille dans le grid
+ * - ses compétences avec icônes
+ */
 const categories: SkillCategory[] = [
   {
     id: "uxui",
     title: "skills_group_uxui",
-    size: "wide",
+    size: "wide", // Prend 2 colonnes
     skills: [
       { name: "skills_uxui_design", icon: uxui },
       { name: "skills_uxui_wireframing", icon: wireframe },
@@ -88,7 +132,7 @@ const categories: SkillCategory[] = [
   {
     id: "frontend",
     title: "skills_group_frontend",
-    size: "tall",
+    size: "tall", // Prend 2 lignes
     skills: [
       { name: "skills_frontend_html", icon: html },
       { name: "skills_frontend_css", icon: css },
@@ -120,6 +164,7 @@ const categories: SkillCategory[] = [
       { name: "skills_pm_communication", icon: communication },
     ],
   },
+  // Catégories commentées (désactivées pour l'instant)
   // {
   //   id: "backend-system",
   //   title: "skills_group_backend",
@@ -146,7 +191,7 @@ const categories: SkillCategory[] = [
   {
     id: "nocode",
     title: "skills_group_nocode",
-    size: "square",
+    size: "square", // Carré standard (1x1)
     skills: [
       { name: "skills_nocode_pandasuite", icon: panda },
       { name: "skills_nocode_divi", icon: divi },
@@ -170,21 +215,34 @@ const categories: SkillCategory[] = [
   },
 ];
 
+// ============================================
+// COMPOSANT
+// ============================================
+
 export default function Competences() {
+  // Hook d'animation au scroll
   const skillsReveal = useRevealOnScroll<HTMLDivElement>();
+
+  // Hook de traduction
   const { t } = useTranslation();
 
   return (
     <section
-      id="skills"
+      id="skills" // Pour la navigation par ancre
       ref={skillsReveal.ref}
       className={`skills-section reveal ${
         skillsReveal.isVisible ? "reveal--visible" : ""
       }`}
     >
+      {/* Titre de section */}
       <h2 className="skills-title">{t("skills_title")}</h2>
 
+      {/* Grid Bento : conteneur de toutes les catégories */}
       <div className="skills-bento">
+        {/*
+          Pour chaque catégorie, on crée une boîte bento
+          La classe de taille est ajoutée dynamiquement
+        */}
         {categories.map((category) => (
           <section
             key={category.id}
@@ -192,11 +250,18 @@ export default function Competences() {
               category.size ? `bento-item--${category.size}` : ""
             }`}
           >
+            {/* Titre de la catégorie */}
             <h3 className="bento-title">{t(category.title)}</h3>
 
+            {/* Grille des compétences dans cette catégorie */}
             <div className="bento-skills-grid">
               {category.skills.map((skill) => (
                 <div key={skill.name} className="bento-skill-card">
+                  {/*
+                    Rendu conditionnel de l'icône
+                    alt="" et aria-hidden="true" car l'icône est décorative
+                    (le nom de la compétence est déjà affiché en texte)
+                  */}
                   {skill.icon && (
                     <img
                       src={skill.icon}
@@ -205,6 +270,7 @@ export default function Competences() {
                       className="bento-skill-icon"
                     />
                   )}
+                  {/* Nom de la compétence traduit */}
                   <span className="bento-skill-name">{t(skill.name)}</span>
                 </div>
               ))}

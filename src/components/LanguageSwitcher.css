@@ -1,12 +1,30 @@
+/**
+ * LanguageSwitcher.css - Styles du sélecteur de langue
+ *
+ * Deux boutons côte à côte (FR | EN)
+ * Le bouton de la langue active est mis en surbrillance (accent color)
+ *
+ * Structure :
+ * .lang-switch        → Conteneur des boutons
+ * .lang-switch button → Style des boutons
+ * .is-active          → Modificateur pour le bouton actif
+ */
+
+/* ============================================
+   CONTENEUR
+   ============================================ */
 .lang-switch {
   display: inline-flex;
-  gap: 0.4rem;
+  gap: 0.4rem; /* Petit espace entre les boutons */
 }
 
+/* ============================================
+   BOUTONS DE LANGUE
+   ============================================ */
 .lang-switch button {
-  min-width: 2.6rem;
+  min-width: 2.6rem; /* Largeur minimum pour uniformité */
   padding: 0.25rem 0.9rem;
-  border-radius: 999px;
+  border-radius: 999px; /* Forme pilule */
   border: 1px solid var(--color-border);
   background-color: transparent;
   color: var(--color-text);
@@ -21,19 +39,25 @@
     border-color 0.2s ease;
 }
 
-/* état actif (langue sélectionnée) */
+/* ============================================
+   ÉTAT ACTIF (langue sélectionnée)
+   ============================================ */
 .lang-switch button.is-active {
   background-color: var(--color-accent);
   color: var(--color-bg);
   border-color: var(--color-accent);
 }
 
-/* hover léger */
+/* ============================================
+   HOVER
+   ============================================ */
 .lang-switch button:hover {
   border-color: var(--color-accent);
 }
 
-/* focus A11Y */
+/* ============================================
+   FOCUS CLAVIER (accessibilité)
+   ============================================ */
 .lang-switch button:focus-visible {
   outline: 2px solid var(--color-accent-hover);
   outline-offset: 3px;

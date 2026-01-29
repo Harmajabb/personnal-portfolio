@@ -1,6 +1,22 @@
+/**
+ * Toggle.css - Styles du bouton de basculement thème
+ *
+ * Bouton rond avec animation de slide entre soleil et lune
+ * Les deux icônes sont empilées et on translate pour afficher l'une ou l'autre
+ *
+ * Structure :
+ * .theme-toggle  → Bouton conteneur
+ * .icon-viewport → Zone visible (masque une icône)
+ * .icon-stack    → Empile les deux icônes, se déplace verticalement
+ * .icon          → Style des icônes SVG
+ */
+
+/* ============================================
+   BOUTON PRINCIPAL
+   ============================================ */
 .theme-toggle {
   padding: 0.5rem;
-  border-radius: 999px;
+  border-radius: 999px; /* Forme ronde */
   border: 1px solid var(--color-border);
   background: transparent;
   color: var(--color-text);
@@ -15,22 +31,32 @@
     transform 0.15s ease;
 }
 
+/* Effet au survol */
 .theme-toggle:hover {
   background-color: var(--color-accent);
   color: var(--color-bg);
   border-color: var(--color-accent);
-  transform: translateY(-1px);
+  transform: translateY(-1px); /* Légère élévation */
 }
 
+/* Retour à la position normale au clic */
 .theme-toggle:active {
   transform: translateY(0);
 }
 
+/* Focus clavier */
 .theme-toggle:focus-visible {
   outline: 2px solid var(--color-accent-hover);
   outline-offset: 3px;
 }
 
+/* ============================================
+   VIEWPORT - ZONE VISIBLE
+   ============================================ */
+/*
+ * overflow: hidden cache l'icône qui dépasse
+ * Crée un "masque" de 24x24px
+ */
 .icon-viewport {
   display: inline-block;
   width: 24px;
@@ -39,32 +65,53 @@
   vertical-align: middle;
 }
 
+/* ============================================
+   STACK - PILE D'ICÔNES
+   ============================================ */
+/*
+ * Les deux icônes sont empilées verticalement
+ * En mode clair : translateY(0%) → montre le soleil
+ * En mode sombre : translateY(-50%) → montre la lune
+ */
 .icon-stack {
   display: inline-flex;
   flex-direction: column;
-  transition: transform 0.45s ease;
-  will-change: transform;
+  transition: transform 0.45s ease; /* Animation fluide */
+  will-change: transform; /* Optimisation GPU */
 }
 
+/* ============================================
+   ICÔNES
+   ============================================ */
 .icon {
   width: 24px;
   height: 24px;
   display: block;
-  pointer-events: none;
+  pointer-events: none; /* Ne capture pas les clics */
 }
 
+/* ============================================
+   ANIMATION SELON LE THÈME
+   ============================================ */
+
+/* Mode clair : affiche le soleil (première icône) */
 :root[data-theme="light"] .icon-stack {
   transform: translateY(0%);
 }
 
+/* Mode sombre : affiche la lune (décalage de -50% = hauteur d'une icône) */
 :root[data-theme="dark"] .icon-stack {
   transform: translateY(-50%);
 }
 
+/* En mode sombre, inverse les couleurs des icônes pour qu'elles restent visibles */
 :root[data-theme="dark"] .theme-toggle img {
   filter: invert(1) brightness(1.5);
 }
 
+/* ============================================
+   UTILITAIRE : SCREEN READER ONLY
+   ============================================ */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -77,6 +124,9 @@
   border: 0;
 }
 
+/* ============================================
+   RESPONSIVE - Petit mobile
+   ============================================ */
 @media (max-width: 480px) {
   .theme-toggle {
     padding: 0.4rem;

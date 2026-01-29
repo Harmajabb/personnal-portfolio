@@ -1,3 +1,18 @@
+/**
+ * Contact.css - Styles de la section Contact
+ *
+ * Section centrée avec cartes de contact et bouton CV
+ *
+ * Structure :
+ * .contact-section   → Section conteneur
+ * .contact-grid      → Conteneur flex des cartes
+ * .contact-card      → Carte individuelle (lien)
+ * .contact-cv-button → Bouton de téléchargement CV
+ */
+
+/* ============================================
+   SECTION CONTENEUR
+   ============================================ */
 .contact-section {
   padding: 5rem 2rem 4rem;
   text-align: center;
@@ -9,14 +24,20 @@
   margin-bottom: 3rem;
 }
 
+/* ============================================
+   GRILLE DES CARTES DE CONTACT
+   ============================================ */
 .contact-grid {
   display: flex;
   justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
+  gap: 4rem; /* Grand espace entre les cartes */
+  flex-wrap: wrap; /* Passe à la ligne sur petit écran */
   margin-bottom: 3rem;
 }
 
+/* ============================================
+   CARTE DE CONTACT
+   ============================================ */
 .contact-card {
   display: flex;
   flex-direction: column;
@@ -28,6 +49,10 @@
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   box-shadow: 0 8px 18px var(--shadow-soft);
+  /*
+   * Transition pour l'effet de survol
+   * Inclut élévation, bordure et ombre
+   */
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -35,13 +60,15 @@
     border-color 0.2s ease;
 }
 
+/* Effet au survol et au focus clavier */
 .contact-card:hover,
 .contact-card:focus-visible {
-  transform: translateY(-3px);
+  transform: translateY(-3px); /* Légère élévation */
   border-color: var(--color-accent);
   box-shadow: 0 14px 28px var(--shadow-soft);
 }
 
+/* Icône du service */
 .contact-icon {
   width: 50px;
   height: 50px;
@@ -49,21 +76,26 @@
   margin-bottom: 0.5rem;
 }
 
+/* Label du service (Gmail, LinkedIn...) */
 .contact-label {
   font-weight: 600;
   font-size: 1rem;
   color: var(--color-text);
 }
 
+/* Handle/identifiant de l'utilisateur */
 .contact-handle {
   font-size: 0.9rem;
   color: var(--color-text-secondary);
 }
 
+/* ============================================
+   BOUTON CV
+   ============================================ */
 a.contact-cv-button {
   display: inline-block;
   padding: 0.9rem 2.8rem;
-  border-radius: 999px;
+  border-radius: 999px; /* Forme pilule */
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -88,13 +120,16 @@ a.contact-cv-button:focus-visible {
   outline-offset: 4px;
 }
 
+/* ============================================
+   RESPONSIVE - Mobile (max 768px)
+   ============================================ */
 @media (max-width: 768px) {
   .contact-title {
     margin-bottom: 2.5rem;
   }
 
   .contact-grid {
-    gap: 2.5rem;
+    gap: 2.5rem; /* Réduit l'espacement sur mobile */
   }
 
   .contact-card {

@@ -1,36 +1,74 @@
+/**
+ * About.css - Styles de la section À propos
+ *
+ * Layout en deux colonnes avec cartes et photo portrait
+ *
+ * Structure :
+ * .about-section      → Section conteneur
+ * .about-layout       → Grid 2 colonnes
+ * .about-left         → Colonne avec les cartes info
+ * .about-right        → Colonne avec photo + fun fact
+ * .about-card         → Style des cartes
+ * .about-photo-*      → Styles de la photo portrait
+ */
+
+/* ============================================
+   SECTION CONTENEUR
+   ============================================ */
 .about-section {
+  /*
+   * 4vw = 4% de la largeur du viewport
+   * Crée un padding responsive qui s'adapte à l'écran
+   */
   padding: 5rem 4vw 6rem;
   background-color: var(--color-bg);
   color: var(--color-text);
 }
 
+/* Titre centré */
 .about-title {
   text-align: center;
   margin-bottom: 3rem;
 }
 
+/* ============================================
+   LAYOUT GRID
+   ============================================ */
 .about-layout {
   display: grid;
+  /*
+   * minmax(0, 1.2fr) minmax(0, 1fr) :
+   * - Colonne gauche : légèrement plus large (1.2 parts)
+   * - Colonne droite : 1 part
+   * - minmax(0, x) évite les débordements
+   */
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 3rem;
-  align-items: center;
+  align-items: center; /* Centre verticalement */
 }
 
+/* ============================================
+   COLONNE GAUCHE (CARTES)
+   ============================================ */
 .about-left {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Espace entre les cartes */
 }
 
+/* ============================================
+   CARTES
+   ============================================ */
 .about-card {
   background: var(--color-bg-card);
   border-radius: 16px;
-  margin: 0 5rem;
+  margin: 0 5rem; /* Marge horizontale pour créer du retrait */
   padding: 1.6rem 2.5rem;
   border: 1px solid var(--color-border);
-  box-shadow: 0 18px 40px var(--shadow-soft);
+  box-shadow: 0 18px 40px var(--shadow-soft); /* Ombre pour profondeur */
 }
 
+/* Titre de carte en petit texte uppercase */
 .about-card-title {
   font-size: 0.9rem;
   letter-spacing: 0.1em;
@@ -39,13 +77,17 @@
   color: var(--color-text-secondary);
 }
 
+/* Texte de carte */
 .about-card-text {
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--color-text);
-  opacity: 0.95;
+  opacity: 0.95; /* Légèrement atténué pour hiérarchie visuelle */
 }
 
+/* ============================================
+   COLONNE DROITE (PHOTO + FUN FACT)
+   ============================================ */
 .about-right {
   display: flex;
   flex-direction: column;
@@ -53,8 +95,18 @@
   gap: 2rem;
 }
 
+/* ============================================
+   PHOTO PORTRAIT
+   ============================================ */
 .about-photo-wrapper {
   position: relative;
+  /*
+   * min() prend la plus petite valeur entre :
+   * - 320px (taille fixe)
+   * - 70vw (70% de la largeur de l'écran)
+   * Ainsi la photo ne sera jamais plus grande que 320px
+   * mais se réduira sur petit écran
+   */
   width: min(320px, 70vw);
   height: min(320px, 70vw);
   display: flex;
@@ -62,11 +114,17 @@
   align-items: center;
 }
 
+/* Bordure dégradée autour de la photo */
 .about-photo-border {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  padding: 6px;
+  border-radius: 50%; /* Cercle parfait */
+  padding: 6px; /* Épaisseur de la bordure */
+  /*
+   * radial-gradient crée un dégradé circulaire
+   * - circle at 30% 0 : centre du dégradé en haut à gauche
+   * - Du violet (accent) vers la couleur de fond
+   */
   background: radial-gradient(
     circle at 30% 0,
     var(--color-accent),
@@ -77,24 +135,35 @@
   align-items: center;
 }
 
+/* Image du portrait */
 .about-photo {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover; /* Remplit le cercle en gardant les proportions */
 }
 
+/* Carte fun fact : prend toute la largeur disponible */
 .about-card-fun {
-  align-self: stretch;
+  align-self: stretch; /* S'étend sur toute la largeur du parent */
   margin-top: 3rem;
 }
 
+/* ============================================
+   RESPONSIVE - Tablette/Mobile (max 900px)
+   ============================================ */
 @media (max-width: 900px) {
+  /* Passe en une colonne */
   .about-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
+  /*
+   * order: -1 place la photo EN PREMIER sur mobile
+   * (avant les cartes de gauche)
+   * L'ordre naturel dans le HTML est inversé visuellement
+   */
   .about-right {
     order: -1;
   }
@@ -103,6 +172,7 @@
     padding-inline: 1.5rem;
   }
 
+  /* Supprime les marges des cartes sur mobile */
   .about-card {
     margin: 0;
     padding: 1.4rem 1.6rem;

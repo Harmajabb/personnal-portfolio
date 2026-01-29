@@ -1,20 +1,46 @@
+/**
+ * ScrollUpButton.css - Styles du bouton "Remonter"
+ *
+ * Bouton flottant fixe en bas à droite avec effet glassmorphism
+ * Animation d'apparition/disparition au scroll
+ *
+ * Structure :
+ * .scroll-up      → Bouton principal
+ * .scroll-up-icon → Icône flèche
+ * .visible/.hidden → États d'animation
+ */
+
+/* ============================================
+   BOUTON PRINCIPAL
+   ============================================ */
 .scroll-up {
   position: fixed;
+  /*
+   * env(safe-area-inset-*) : gère les zones sûres sur mobile
+   * Ex: encoche iPhone, barre de navigation Android
+   * Ajoute un espace supplémentaire si nécessaire
+   */
   right: calc(16px + env(safe-area-inset-left, 0px));
   bottom: calc(95px + env(safe-area-inset-bottom, 0px));
   z-index: 1000;
   padding: 1rem;
-  border-radius: 50%;
+  border-radius: 50%; /* Bouton rond */
   cursor: pointer;
   display: flex;
+
+  /* État initial : invisible */
   opacity: 0;
   transform: translateY(20px);
-  pointer-events: none;
+  pointer-events: none; /* Ne capture pas les clics quand invisible */
+
+  /* Effet glassmorphism */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background: hsl(0 0% 100% / 0.12);
+  background: hsl(0 0% 100% / 0.12); /* Blanc semi-transparent */
   border: 1px solid var(--color-border);
   box-shadow: 0 8px 20px var(--shadow-soft);
+
+  /* Transitions pour l'animation */
   transition:
     opacity 0.5s ease,
     transform 0.5s ease,
@@ -22,31 +48,43 @@
     box-shadow 0.3s ease;
 }
 
+/* Ajustements pour le thème sombre */
 :root[data-theme="dark"] .scroll-up {
   background: hsl(0 0% 100% / 0.08);
   border-color: var(--color-border);
 }
 
+/* ============================================
+   ÉTATS INTERACTIFS
+   ============================================ */
+
+/* Survol : couleur accent + élévation */
 .scroll-up:hover {
   background: var(--color-accent);
   box-shadow: 0 12px 26px var(--shadow-soft);
   transform: translateY(-3px);
 }
 
+/* L'icône SVG monte légèrement au survol */
 .scroll-up:hover svg {
   transform: translateY(-2px);
 }
 
+/* Clic : retour à la position normale */
 .scroll-up:active {
   transform: translateY(0);
   box-shadow: 0 6px 12px var(--shadow-soft);
 }
 
+/* Focus clavier */
 .scroll-up:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 0.4rem;
 }
 
+/* ============================================
+   ICÔNE
+   ============================================ */
 .scroll-up-icon {
   width: 22px;
   height: 22px;
@@ -54,22 +92,32 @@
   transition: transform 0.25s ease;
 }
 
+/* Inverse les couleurs en mode sombre */
 :root[data-theme="dark"] .scroll-up-icon {
   filter: invert(1) brightness(1.6);
 }
 
+/* ============================================
+   ÉTATS DE VISIBILITÉ
+   ============================================ */
+
+/* Visible : opaque et en position */
 .scroll-up.visible {
   opacity: 1;
   transform: translateY(0);
-  pointer-events: auto;
+  pointer-events: auto; /* Réactive les clics */
 }
 
+/* Caché : transparent et décalé vers le bas */
 .scroll-up.hidden {
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
 }
 
+/* ============================================
+   RESPONSIVE - Petit mobile
+   ============================================ */
 @media (max-width: 480px) {
   .scroll-up {
     padding: 0.8rem;
