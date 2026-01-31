@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ProjectCard, { type ProjectActionIcon } from "./ProjectCard";
 import "./ProjectsSection.css";
@@ -115,31 +115,28 @@ export default function ProjectsSection() {
   }, [selectedProject]);
 
   // Focus trap pour garder le focus dans la modale
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setSelectedProject(null);
-        return;
-      }
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setSelectedProject(null);
+      return;
+    }
 
-      if (e.key === "Tab" && modalRef.current) {
-        const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
+    if (e.key === "Tab" && modalRef.current) {
+      const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
 
-        if (e.shiftKey && document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement?.focus();
-        } else if (!e.shiftKey && document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement?.focus();
-        }
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement?.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement?.focus();
       }
-    },
-    []
-  );
+    }
+  }, []);
 
   useEffect(() => {
     if (selectedProject) {
@@ -204,7 +201,9 @@ export default function ProjectsSection() {
             <div className="modal-columns">
               <div>
                 <h4>{t("project_modal_project")}</h4>
-                <p id="modal-description">{t(selectedProject.fullDescription)}</p>
+                <p id="modal-description">
+                  {t(selectedProject.fullDescription)}
+                </p>
               </div>
               <div>
                 <h4>{t("project_modal_constraints")}</h4>

@@ -18,7 +18,7 @@ function ScrollUpButton() {
     // Mettre le focus sur la navbar après le scroll
     setTimeout(() => {
       const navbarBrand = document.querySelector(
-        ".navbar-brand"
+        ".navbar-brand",
       ) as HTMLElement;
       if (navbarBrand) {
         navbarBrand.focus();
