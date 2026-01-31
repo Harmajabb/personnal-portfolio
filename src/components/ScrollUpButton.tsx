@@ -15,6 +15,15 @@ function ScrollUpButton() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    // Mettre le focus sur la navbar après le scroll
+    setTimeout(() => {
+      const navbarBrand = document.querySelector(
+        ".navbar-brand"
+      ) as HTMLElement;
+      if (navbarBrand) {
+        navbarBrand.focus();
+      }
+    }, 500);
   };
 
   return (
@@ -22,7 +31,7 @@ function ScrollUpButton() {
       type="button"
       onClick={scrollToTop}
       className={`scroll-up ${isVisible ? "visible" : "hidden"}`}
-      aria-label={t("a11_scrollUP")}
+      aria-label={t("a11y_scrollUP")}
     >
       <img
         src={scrollUpIcon}
