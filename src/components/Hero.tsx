@@ -40,7 +40,11 @@ export default function Hero() {
             imageReveal.isVisible ? "reveal--visible" : ""
           }`}
         >
-          <img className="hero-image" src={heroImage} alt={t("a11_hero_alt")} />
+          <img
+            className="hero-image"
+            src={heroImage}
+            alt={t("a11y_hero_alt")}
+          />
         </div>
       </div>
     </section>

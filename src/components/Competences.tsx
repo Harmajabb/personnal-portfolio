@@ -205,7 +205,7 @@ export default function Competences() {
                       className="bento-skill-icon"
                     />
                   )}
-                  <span className="bento-skill-name">{t(skill.name)}</span>
+                  <p className="bento-skill-name">{t(skill.name)}</p>
                 </div>
               ))}
             </div>

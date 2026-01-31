@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ProjectCard, { type ProjectActionIcon } from "./ProjectCard";
 import "./ProjectsSection.css";
@@ -6,18 +6,12 @@ import "./ProjectsSection.css";
 // import iconFigma from "../assets/ImageProjects/figmaicon.png";
 import iconGitHub from "../assets/ImageProjects/githubicon.png";
 import project1 from "../assets/ImageProjects/projet1.png";
-import project2 from "../assets/ImageProjects/projet2.png";
-// import project3 from "../assets/ImageProjects/projet3.png";
-// import project4 from "../assets/ImageProjects/projet4.png";
-// import project5 from "../assets/ImageProjects/projet5.png";
 import project6 from "../assets/ImageProjects/projet6.png";
+import project7 from "../assets/ImageProjects/projet7.png";
 import iconWorld from "../assets/ImageProjects/world.png";
-// import GarbageCityVideo from "../assets/videos/garbage_city.mp4";
-// import infoDropDownVideo from "../assets/videos/info_dropdown.mp4";
+import dsA11yVideo from "../assets/videos/ds_a11y.mp4";
 import MoveUp from "../assets/videos/move_up.mp4";
 import PortfolioV2Video from "../assets/videos/portfolio_v2.mp4";
-// import sharkapuceVideo from "../assets/videos/sharkapuce_media.mp4";
-import tatooineVideo from "../assets/videos/tatooine_interim.mp4";
 
 type Project = {
   id: number;
@@ -56,9 +50,32 @@ const projects: Project[] = [
     learned: "project_portfolio_v2_learned",
     fullDescription: "project_portfolio_v2_project",
   },
-
   {
     id: 2,
+    title: "project_dsA11y_title",
+    description: "project_dsA11y_card_subtitle",
+    image: project7,
+    techs: ["React", "JavaScript", "CSS"],
+    icons: [
+      {
+        icon: iconGitHub,
+        labelKey: "project_modal_github",
+        url: "https://github.com/Harmajabb/a11y-ds-generator",
+      },
+      {
+        icon: iconWorld,
+        labelKey: "project_modal_demo",
+        url: "https://github.com/Harmajabb/a11y-ds-generator",
+      },
+    ],
+    videoUrl: dsA11yVideo,
+    constraints: "project_dsA11y_constraints",
+    learned: "project_dsA11y_learned",
+    fullDescription: "project_dsA11y_project",
+  },
+
+  {
+    id: 3,
     title: "project_portfolio_v1_title",
     description: "project_portfolio_v1_card_subtitle",
     image: project6,
@@ -82,110 +99,46 @@ const projects: Project[] = [
     learned: "project_portfolio_v1_learned",
     fullDescription: "project_portfolio_v1_project",
   },
-  {
-    id: 3,
-    title: "project_tatooine_title",
-    description: "project_tatooine_card_subtitle",
-    image: project2,
-    techs: ["React", "JavaScript", "CSS"],
-    icons: [
-      {
-        icon: iconGitHub,
-        labelKey: "project_modal_github",
-        url: "https://github.com/Harmajabb/portfolio-tatooine_interim",
-      },
-      {
-        icon: iconWorld,
-        labelKey: "project_modal_demo",
-        url: "https://portfolio-tatooine-interim.vercel.app/",
-      },
-    ],
-    videoUrl: tatooineVideo,
-    constraints: "project_tatooine_constraints",
-    learned: "project_tatooine_learned",
-    fullDescription: "project_tatooine_project",
-  },
-
-  // {
-  //   id: 4,
-  //   title: "project_media_title",
-  //   description: "project_media_card_subtitle",
-  //   image: project3,
-  //   techs: ["HTML", "CSS", "JavaScript"],
-  //   icons: [
-  //     {
-  //       icon: iconGitHub,
-  //       label: "project_icon_github",
-  //       url: "https://github.com/Harmajabb/portfolio-mediaSharkapuce",
-  //     },
-  //     {
-  //       icon: iconWorld,
-  //       label: "project_icon_website",
-  //       url: "https://harmajabb.github.io/portfolio-mediaSharkapuce/pages/dvd-page.html",
-  //     },
-  //   ],
-  //   videoUrl: sharkapuceVideo,
-  //   constraints: "project_media_constraints",
-  //   learned: "project_media_learned",
-  //   fullDescription: "project_media_project",
-  // },
-
-  // {
-  //   id: 5,
-  //   title: "project_intro_title",
-  //   description: "project_intro_card_subtitle",
-  //   image: project4,
-  //   techs: ["HTML", "CSS", "JavaScript"],
-  //   icons: [
-  //     {
-  //       icon: iconGitHub,
-  //       label: "project_icon_github",
-  //       url: "https://github.com/Harmajabb/intro-section-dropdown",
-  //     },
-  //     {
-  //       icon: iconWorld,
-  //       label: "project_icon_website",
-  //       url: "https://harmajabb.github.io/intro-section-dropdown/",
-  //     },
-  //   ],
-  //   videoUrl: infoDropDownVideo,
-  //   constraints: "project_intro_constraints",
-  //   learned: "project_intro_learned",
-  //   fullDescription: "project_intro_project",
-  // },
-
-  // {
-  //   id: 6,
-  //   title: "project_garbage_title",
-  //   description: "project_garbage_card_subtitle",
-  //   image: project5,
-  //   techs: ["HTML", "CSS", "JavaScript", "modernBB"],
-  //   icons: [
-  //     {
-  //       icon: iconWorld,
-  //       label: "project_icon_website",
-  //       url: "https://garbage-city.forumactif.com/",
-  //     },
-  //   ],
-  //   videoUrl: GarbageCityVideo,
-  //   constraints: "project_garbage_constraints",
-  //   learned: "project_garbage_learned",
-  //   fullDescription: "project_garbage_project",
-  // },
 ];
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const { t } = useTranslation();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
-  // fermeture avec ESC
+  // Focus sur le bouton close quand la modale s'ouvre
   useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        setSelectedProject(null);
-      }
+    if (selectedProject && closeButtonRef.current) {
+      closeButtonRef.current.focus();
+    }
+  }, [selectedProject]);
+
+  // Focus trap pour garder le focus dans la modale
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setSelectedProject(null);
+      return;
     }
 
+    if (e.key === "Tab" && modalRef.current) {
+      const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement?.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement?.focus();
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     if (selectedProject) {
       document.addEventListener("keydown", handleKeyDown);
     }
@@ -193,7 +146,7 @@ export default function ProjectsSection() {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedProject]);
+  }, [selectedProject, handleKeyDown]);
 
   return (
     <section className="projects-section" id="projects">
@@ -216,17 +169,27 @@ export default function ProjectsSection() {
       {/* MODAL */}
       {selectedProject && (
         <div className="modal-overlay">
-          <div className="modal" role="dialog" aria-modal="true">
+          <div
+            ref={modalRef}
+            className="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-description"
+          >
             <button
+              ref={closeButtonRef}
               type="button"
               className="modal-close"
-              aria-label="Fermer la fenêtre"
+              aria-label={t("a11y_closeModal")}
               onClick={() => setSelectedProject(null)}
             >
               &times;
             </button>
 
-            <h3 className="modal-title">{t(selectedProject.title)}</h3>
+            <h3 id="modal-title" className="modal-title">
+              {t(selectedProject.title)}
+            </h3>
 
             <video
               className="modal-video"
@@ -238,7 +201,9 @@ export default function ProjectsSection() {
             <div className="modal-columns">
               <div>
                 <h4>{t("project_modal_project")}</h4>
-                <p>{t(selectedProject.fullDescription)}</p>
+                <p id="modal-description">
+                  {t(selectedProject.fullDescription)}
+                </p>
               </div>
               <div>
                 <h4>{t("project_modal_constraints")}</h4>
